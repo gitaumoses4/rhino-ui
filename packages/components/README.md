@@ -2,7 +2,7 @@
   <a href="https://rhinolabs.agency" rel="noopener" target="_blank"><img width="150" src="https://rhinolabs.agency/assets/logo.png" alt="Rhinolabs logo"></a></p>
 </p>
 
-<h1 align="center" style="border-bottom: none;">Rhinolabs Component Library</h1>
+<h1 align="center" style="border-bottom: none;">RhinoUI Component Library</h1>
 <h3 align="center">
 
   A [React](https://reactjs.org/) component library to power all Rhinolabs UI
@@ -11,8 +11,8 @@
 
 <div align="center" style="margin-top: 25px">
 
-  [![Publish To NPM](https://github.com/rhinolabs/rhinolabs-components/workflows/Publish%20To%20NPM/badge.svg)](https://github.com/rhinolabs/rhinolabs-components/actions?query=workflow%3A%22Publish+To+NPM%22)
-  [![Chromatic](https://github.com/rhinolabs/rhinolabs-components/workflows/Chromatic/badge.svg?branch=main)](https://github.com/rhinolabs/rhinolabs-components/actions?query=workflow%3AChromatic)
+  [![Publish To NPM](https://github.com/rhinolabs/rhino-ui/workflows/Publish%20To%20NPM/badge.svg)](https://github.com/rhinolabs/rhino-ui/actions?query=workflow%3A%22Publish+To+NPM%22)
+  [![Chromatic](https://github.com/rhinolabs/rhino-ui/workflows/Chromatic/badge.svg?branch=main)](https://github.com/rhinolabs/rhino-ui/actions?query=workflow%3AChromatic)
   [![Test Coverage](https://api.codeclimate.com/v1/badges/e61e897623b87d91d155/test_coverage)](https://codeclimate.com/github/rhinolabs/rhinolabs-components/test_coverage)
 
 </div>
@@ -59,7 +59,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 ## Contributing
 
-Issues and PRs welcome! See [HERE](https://github.com/rhinolabs/rhinolabs-components/blob/main/docs/CONTRIBUTING.md) for our Contribution Guide.
+Issues and PRs welcome! See [HERE](https://github.com/rhinolabs/rhino-ui/blob/main/docs/CONTRIBUTING.md) for our Contribution Guide.
 
 ## Raising an Issue
 
@@ -69,7 +69,7 @@ When raising an issue:
 * If your issue is a bug, include **screenshots** or animated GIFs in your issue whenever needed (if issue is visual in nature).
 * If your issue is a bug, include steps to reproduce, or link to reproducible issue, e.g.: Code Sandbox or similar. Please also provide any additional details including device, OS, browser, browser version etc.
 
-[Issues can be raised here](https://github.com/rhinolabs/rhinolabs-components/issues).
+[Issues can be raised here](https://github.com/rhinolabs/rhino-ui/issues).
 
 ## License
 

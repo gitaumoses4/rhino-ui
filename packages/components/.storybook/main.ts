@@ -1,5 +1,5 @@
 import type {StorybookConfig} from "@storybook/react-vite";
-
+import {plugins as codesandboxPlugins} from "./codesandbox/plugins";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -9,23 +9,21 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
+    "@storybook/addon-essentials",
     {
-      name: '@storybook/addon-docs',
+      name: "@storybook/addon-docs",
       options: {
-        transcludeMarkdown: true,
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [...codesandboxPlugins],
+          },
+        }
       },
     },
-    "@storybook/addon-essentials",
-    "@storybook/addon-designs",
-    "storybook-addon-mdx-embed",
-    "@storybook/addon-mdx-gfm",
   ],
   framework: {
     name: "@storybook/react-vite",
     options: {},
-  },
-  docs: {
-    autodocs: true,
-  },
+  }
 };
 export default config;
