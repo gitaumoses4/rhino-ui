@@ -5,7 +5,10 @@
   "private": true,
   "description": "Typescript configuration for Rhino UI",
   "main": "src/base.json",
-  "scripts": {},
+  "scripts": {
+    "eslint": "eslint src --fix",
+    "format": "prettier --write **/src/** --cache "
+  },
   "dependencies": {
   }
 }

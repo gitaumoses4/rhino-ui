@@ -5,7 +5,10 @@
   "private": true,
   "description": "Stylelint configuration for Rhino UI",
   "main": "src/index.js",
-  "scripts": {},
+  "scripts": {
+    "eslint": "eslint src --fix",
+    "format": "prettier --write **/src/** --cache "
+  },
   "dependencies": {
     "stylelint": "^15.11.0",
     "stylelint-config-concentric-order": "^4.0.1",

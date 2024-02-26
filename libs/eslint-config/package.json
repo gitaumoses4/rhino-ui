@@ -5,7 +5,10 @@
   "private": true,
   "description": "ESLint configuration for Rhino UI",
   "main": "src/index.js",
-  "scripts": {},
+  "scripts": {
+    "eslint": "eslint src --fix",
+    "format": "prettier --write **/src/** --cache "
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
