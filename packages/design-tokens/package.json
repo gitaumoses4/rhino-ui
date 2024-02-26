@@ -10,7 +10,7 @@
   "scripts": {
     "build": "node build.js",
     "clean": "rimraf build",
-    "eslint": "eslint src --fix",
+    "eslint": "eslint **/*.js --fix",
     "stylelint": "stylelint '**/*.{css,scss,sass}'",
     "format": "prettier --write **/src/** --cache "
   },
