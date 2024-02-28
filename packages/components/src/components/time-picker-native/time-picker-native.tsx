@@ -11,7 +11,7 @@ export interface TimePickerNativeProps extends Omit<SelectInputNativeProps, 'opt
   /**
    * End hour and minute
    */
-  endTime?: { hour: number; minute: number; };
+  endTime?: { hour: number; minute: number };
   /**
    * Interval of displayed times (in seconds). Defaults to 900 seconds (15 minutes).
    */
@@ -25,7 +25,7 @@ export interface TimePickerNativeProps extends Omit<SelectInputNativeProps, 'opt
   /**
    * Start hour and minute
    */
-  startTime?: { hour: number; minute: number; };
+  startTime?: { hour: number; minute: number };
   /**
    *  Should be ISO timestamp as returned by `onChange`, and matching value of option object.
    */

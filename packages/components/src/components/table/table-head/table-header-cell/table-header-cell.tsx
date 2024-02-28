@@ -1,6 +1,4 @@
-import React, {
-  FC, Key, KeyboardEvent, MouseEvent, ReactNode,
-} from 'react';
+import React, { FC, Key, KeyboardEvent, MouseEvent, ReactNode } from 'react';
 import classNames from 'classnames';
 import { Box } from '../../../box/box';
 import { Icon } from '../../../icon/icon';
@@ -86,13 +84,11 @@ export const TableHeaderCell: FC<TableHeaderCellProps> = ({
   truncateOverflow = false,
   width = undefined,
 }) => {
-  const isColumnSorted = (columnDataKey: Key | undefined): boolean => (
-    !!sortedColumn && sortedColumn.dataKey === columnDataKey
-  );
+  const isColumnSorted = (columnDataKey: Key | undefined): boolean =>
+    !!sortedColumn && sortedColumn.dataKey === columnDataKey;
 
-  const getSortDirection = (): 'ascending' | 'descending' | 'none' | undefined => (
-    sortedColumn && isColumnSorted(column.dataKey) ? sortedColumn.sortDirection : 'none'
-  );
+  const getSortDirection = (): 'ascending' | 'descending' | 'none' | undefined =>
+    sortedColumn && isColumnSorted(column.dataKey) ? sortedColumn.sortDirection : 'none';
 
   const renderIcon = (): ReactNode => {
     const renderArrows = (): ReactNode => {
@@ -160,9 +156,7 @@ export const TableHeaderCell: FC<TableHeaderCellProps> = ({
       display="table-cell"
       className={tableHeaderClasses}
       width={`${width}px`}
-      aria-sort={
-        sortedColumn && isColumnSorted(column.dataKey) ? sortedColumn.sortDirection : 'none'
-      }
+      aria-sort={sortedColumn && isColumnSorted(column.dataKey) ? sortedColumn.sortDirection : 'none'}
       tabIndex={isSortable ? 0 : undefined}
       onClick={handleSort}
       onKeyDown={handleKeyPress}

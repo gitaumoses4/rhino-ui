@@ -36,86 +36,41 @@ export const AllBackgroundColors: Story = {
           color === 'transparent'
         ) {
           return (
-            <Box
-              flex="auto"
-              padding="xs"
-              background={color}
-              key={`${color}-${index}`}
-            >
+            <Box flex="auto" padding="xs" background={color} key={`${color}-${index}`}>
               {`${color}`}
             </Box>
           );
         } else {
           return (
             <Box flex="auto" key={`${color}-${index}`}>
-              <Box
-                flex="auto"
-                padding="xs"
-                background={`${color}-50` as BrandColor}
-              >
+              <Box flex="auto" padding="xs" background={`${color}-50` as BrandColor}>
                 {`${color}-50`}
               </Box>
-              <Box
-                flex="auto"
-                padding="xs"
-                background={`${color}-100` as BrandColor}
-              >
+              <Box flex="auto" padding="xs" background={`${color}-100` as BrandColor}>
                 {`${color}-100`}
               </Box>
-              <Box
-                flex="auto"
-                padding="xs"
-                background={`${color}-200` as BrandColor}
-              >
+              <Box flex="auto" padding="xs" background={`${color}-200` as BrandColor}>
                 {`${color}-200`}
               </Box>
-              <Box
-                flex="auto"
-                padding="xs"
-                background={`${color}-300` as BrandColor}
-              >
+              <Box flex="auto" padding="xs" background={`${color}-300` as BrandColor}>
                 {`${color}-300`}
               </Box>
-              <Box
-                flex="auto"
-                padding="xs"
-                background={`${color}-400` as BrandColor}
-              >
+              <Box flex="auto" padding="xs" background={`${color}-400` as BrandColor}>
                 {`${color}-400`}
               </Box>
-              <Box
-                flex="auto"
-                padding="xs"
-                background={`${color}-500` as BrandColor}
-              >
+              <Box flex="auto" padding="xs" background={`${color}-500` as BrandColor}>
                 {`${color}-500`}
               </Box>
-              <Box
-                flex="auto"
-                padding="xs"
-                background={`${color}-600` as BrandColor}
-              >
+              <Box flex="auto" padding="xs" background={`${color}-600` as BrandColor}>
                 {`${color}-600`}
               </Box>
-              <Box
-                flex="auto"
-                padding="xs"
-                background={`${color}-700` as BrandColor}
-              >
+              <Box flex="auto" padding="xs" background={`${color}-700` as BrandColor}>
                 {`${color}-700`}
               </Box>
-              <Box
-                flex="auto"
-                padding="xs"
-                background={`${color}-800` as BrandColor}
-              >
+              <Box flex="auto" padding="xs" background={`${color}-800` as BrandColor}>
                 {`${color}-800`}
               </Box>
-              <Box
-                flex="auto"
-                padding="xs"
-                background={`${color}-900` as BrandColor}
-              >
+              <Box flex="auto" padding="xs" background={`${color}-900` as BrandColor}>
                 {`${color}-900`}
               </Box>
             </Box>
@@ -139,96 +94,41 @@ export const AllBorderColors: Story = {
           color === 'transparent'
         ) {
           return (
-            <Box
-              borderColor={color}
-              borderWidth="sm"
-              padding="xs"
-              key={`${color}-${index}`}
-            >
+            <Box borderColor={color} borderWidth="sm" padding="xs" key={`${color}-${index}`}>
               {`${color}`}
             </Box>
           );
         } else {
           return (
             <Box flex="auto" key={`${color}-${index}`}>
-              <Box
-                flex="auto"
-                borderColor={`${color}-50` as BrandColor}
-                borderWidth="sm"
-                padding="xs"
-              >
+              <Box flex="auto" borderColor={`${color}-50` as BrandColor} borderWidth="sm" padding="xs">
                 {`${color}-50`}
               </Box>
-              <Box
-                flex="auto"
-                borderColor={`${color}-100` as BrandColor}
-                borderWidth="sm"
-                padding="xs"
-              >
+              <Box flex="auto" borderColor={`${color}-100` as BrandColor} borderWidth="sm" padding="xs">
                 {`${color}-100`}
               </Box>
-              <Box
-                flex="auto"
-                borderColor={`${color}-200` as BrandColor}
-                borderWidth="sm"
-                padding="xs"
-              >
+              <Box flex="auto" borderColor={`${color}-200` as BrandColor} borderWidth="sm" padding="xs">
                 {`${color}-200`}
               </Box>
-              <Box
-                flex="auto"
-                borderColor={`${color}-300` as BrandColor}
-                borderWidth="sm"
-                padding="xs"
-              >
+              <Box flex="auto" borderColor={`${color}-300` as BrandColor} borderWidth="sm" padding="xs">
                 {`${color}-300`}
               </Box>
-              <Box
-                flex="auto"
-                borderColor={`${color}-400` as BrandColor}
-                borderWidth="sm"
-                padding="xs"
-              >
+              <Box flex="auto" borderColor={`${color}-400` as BrandColor} borderWidth="sm" padding="xs">
                 {`${color}-400`}
               </Box>
-              <Box
-                flex="auto"
-                borderColor={`${color}-500` as BrandColor}
-                borderWidth="sm"
-                padding="xs"
-              >
+              <Box flex="auto" borderColor={`${color}-500` as BrandColor} borderWidth="sm" padding="xs">
                 {`${color}-500`}
               </Box>
-              <Box
-                flex="auto"
-                borderColor={`${color}-600` as BrandColor}
-                borderWidth="sm"
-                padding="xs"
-              >
+              <Box flex="auto" borderColor={`${color}-600` as BrandColor} borderWidth="sm" padding="xs">
                 {`${color}-600`}
               </Box>
-              <Box
-                flex="auto"
-                borderColor={`${color}-700` as BrandColor}
-                borderWidth="sm"
-                padding="xs"
-              >
+              <Box flex="auto" borderColor={`${color}-700` as BrandColor} borderWidth="sm" padding="xs">
                 {`${color}-700`}
               </Box>
-              <Box
-                flex="auto"
-                borderColor={`${color}-800` as BrandColor}
-                borderWidth="sm"
-                padding="xs"
-              >
+              <Box flex="auto" borderColor={`${color}-800` as BrandColor} borderWidth="sm" padding="xs">
                 {`${color}-800`}
               </Box>
-              <Box
-                flex="auto"
-                borderColor={`${color}-900` as BrandColor}
-                borderWidth="sm"
-                padding="xs"
-              >
+              <Box flex="auto" borderColor={`${color}-900` as BrandColor} borderWidth="sm" padding="xs">
                 {`${color}-900`}
               </Box>
             </Box>
@@ -445,12 +345,7 @@ export const AllPadding: Story = {
   render: (_args) => (
     <>
       {[...SPACING_OPTIONS].map((spacing, i) => (
-        <Box
-          padding={spacing}
-          background="primary-lighter"
-          margin="xs 0"
-          key={i}
-        >
+        <Box padding={spacing} background="primary-lighter" margin="xs 0" key={i}>
           {`${spacing} padding`}
         </Box>
       ))}
@@ -462,12 +357,7 @@ export const AllHorizontalPadding: Story = {
   render: (_args) => (
     <>
       {[...SPACING_OPTIONS].map((spacing, i) => (
-        <Box
-          padding={`0 ${spacing}`}
-          background="primary-lighter"
-          margin="xs 0"
-          key={i}
-        >
+        <Box padding={`0 ${spacing}`} background="primary-lighter" margin="xs 0" key={i}>
           {`${spacing} horizontal padding`}
         </Box>
       ))}
@@ -479,12 +369,7 @@ export const AllVerticalPadding: Story = {
   render: (_args) => (
     <>
       {[...SPACING_OPTIONS].map((spacing, i) => (
-        <Box
-          padding={`${spacing} 0`}
-          background="primary-lighter"
-          margin="xs 0"
-          key={i}
-        >
+        <Box padding={`${spacing} 0`} background="primary-lighter" margin="xs 0" key={i}>
           {`${spacing} vertical padding`}
         </Box>
       ))}
@@ -500,9 +385,7 @@ const Default: Story = {
         <Box padding="lg" background="grey-50">
           <Box {...args}>
             <p>{`Breakpoint: ${activeBreakpoint.name}`}</p>
-            <p>{`${propertyName}: ${
-              args[propertyName][activeBreakpoint.name]
-            }`}</p>
+            <p>{`${propertyName}: ${args[propertyName][activeBreakpoint.name]}`}</p>
           </Box>
         </Box>
       );
@@ -729,44 +612,17 @@ const ResponsiveBoxChildren: Story = {
       const { activeBreakpoint } = useBreakpoint();
       return (
         <Box background="grey-50" padding="lg" {...args}>
-          <Box
-            flex="auto"
-            radius="md"
-            background="info-100"
-            height="lg"
-            justifyContent="center"
-            alignItems="center"
-          >
+          <Box flex="auto" radius="md" background="info-100" height="lg" justifyContent="center" alignItems="center">
             <p>{`Breakpoint: ${activeBreakpoint.name}`}</p>
-            <p>{`${propertyName}: ${
-              args[propertyName][activeBreakpoint.name]
-            }`}</p>
+            <p>{`${propertyName}: ${args[propertyName][activeBreakpoint.name]}`}</p>
           </Box>
-          <Box
-            flex="auto"
-            radius="md"
-            background="info-100"
-            height="lg"
-            justifyContent="center"
-            alignItems="center"
-          >
+          <Box flex="auto" radius="md" background="info-100" height="lg" justifyContent="center" alignItems="center">
             <p>{`Breakpoint: ${activeBreakpoint.name}`}</p>
-            <p>{`${propertyName}: ${
-              args[propertyName][activeBreakpoint.name]
-            }`}</p>
+            <p>{`${propertyName}: ${args[propertyName][activeBreakpoint.name]}`}</p>
           </Box>
-          <Box
-            flex="auto"
-            radius="md"
-            background="info-100"
-            height="lg"
-            justifyContent="center"
-            alignItems="center"
-          >
+          <Box flex="auto" radius="md" background="info-100" height="lg" justifyContent="center" alignItems="center">
             <p>{`Breakpoint: ${activeBreakpoint.name}`}</p>
-            <p>{`${propertyName}: ${
-              args[propertyName][activeBreakpoint.name]
-            }`}</p>
+            <p>{`${propertyName}: ${args[propertyName][activeBreakpoint.name]}`}</p>
           </Box>
         </Box>
       );
@@ -849,13 +705,7 @@ export const ResponsiveColumnGap: Story = {
 
 export const AllCursorOptions: Story = {
   render: (_args) => (
-    <Box
-      padding="md"
-      childGap="md"
-      flex="auto"
-      background="primary-lighter"
-      overflow="auto"
-    >
+    <Box padding="md" childGap="md" flex="auto" background="primary-lighter" overflow="auto">
       <Box cursor="auto" padding="md" background="primary-light">
         auto
       </Box>
@@ -970,13 +820,7 @@ export const AllCursorOptions: Story = {
 
 export const AllPositionOptions: Story = {
   render: (_args) => (
-    <Box
-      padding="md"
-      childGap="md"
-      flex="auto"
-      background="primary-lighter"
-      overflow="auto"
-    >
+    <Box padding="md" childGap="md" flex="auto" background="primary-lighter" overflow="auto">
       <Box position="absolute" padding="md" background="primary-light">
         absolute
       </Box>

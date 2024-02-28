@@ -1,9 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import {
-  SelectInputNative,
-  SelectInputNativeProps,
-} from './select-input-native';
+import { SelectInputNative, SelectInputNativeProps } from './select-input-native';
 import { Box } from '../box/box';
 import { RESPONSIVE_STORY } from '../../docs/constants';
 

@@ -92,12 +92,7 @@ export const DateInput: FC<DateInputProps> = ({
   };
 
   const getTextInputValue = () => {
-    const {
-      selectsRange,
-      startDate,
-      endDate,
-      selected,
-    } = mergedDatePickerProps;
+    const { selectsRange, startDate, endDate, selected } = mergedDatePickerProps;
 
     const formattedStartDate = startDate ? format(startDate, dateFormat, dateOptions) : '';
     const formattedEndDate = endDate ? format(endDate, dateFormat, dateOptions) : '';

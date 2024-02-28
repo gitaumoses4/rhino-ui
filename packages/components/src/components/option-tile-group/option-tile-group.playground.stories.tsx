@@ -53,10 +53,7 @@ const meta: Meta<typeof OptionTileGroup> = {
         disable: true,
       },
     },
-    ...boxPropsKeys.reduce(
-      (acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }),
-      {}
-    ),
+    ...boxPropsKeys.reduce((acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }), {}),
     direction: {
       control: {
         type: 'select',

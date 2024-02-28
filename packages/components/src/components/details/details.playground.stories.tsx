@@ -11,10 +11,7 @@ const meta: Meta<typeof Details> = {
     isOpen: {
       control: 'boolean',
     },
-    ...boxPropsKeys.reduce(
-      (acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }),
-      {}
-    ),
+    ...boxPropsKeys.reduce((acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }), {}),
   },
 };
 

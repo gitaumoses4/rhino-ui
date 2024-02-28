@@ -95,6 +95,7 @@ const RadioWithDisabledOption: Story = {
   ...Default,
   args: {
     options: [
+      // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
       ...DefaultRadio.args?.options!,
       {
         label: 'Cookies and Cream',
@@ -335,6 +336,7 @@ export const RadioWithCustomContent: Story = {
   ...Default,
   args: {
     options: [
+      // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
       ...DefaultRadio.args?.options!,
       {
         label: 'custom',

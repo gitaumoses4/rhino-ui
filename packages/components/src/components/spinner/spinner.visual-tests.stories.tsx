@@ -20,12 +20,7 @@ export const VariantsAndSizes: Story = {
         <Box gap="sm" key={size}>
           <Box gap="sm" direction="row">
             {BRAND_COLOR_NAMES.map((variant) => (
-              <Spinner
-                {...args}
-                variant={variant}
-                size={size}
-                key={`${size}-${variant}`}
-              />
+              <Spinner {...args} variant={variant} size={size} key={`${size}-${variant}`} />
             ))}
           </Box>
         </Box>

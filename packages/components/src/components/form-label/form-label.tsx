@@ -56,16 +56,11 @@ export const FormLabel: FC<FormLabelProps> = ({
   padding = '0',
   ...restProps
 }) => {
-  const labelClasses = classNames(
-    'rhinolabs-components__variables__form-control',
-    styles.label,
-    className,
-    {
-      [styles.disabled]: isDisabled,
-      [styles.disabled]: isDisabled,
-      [styles['radio-input-label']]: isRadioInputLabel,
-    },
-  );
+  const labelClasses = classNames('rhinolabs-components__variables__form-control', styles.label, className, {
+    [styles.disabled]: isDisabled,
+    [styles.disabled]: isDisabled,
+    [styles['radio-input-label']]: isRadioInputLabel,
+  });
 
   return (
     <Box
@@ -81,13 +76,7 @@ export const FormLabel: FC<FormLabelProps> = ({
       {children}
       {isFieldRequired && requiredIndicator && <span>{requiredIndicator}</span>}
       {helpText && (
-        <Box
-          as="p"
-          display="block"
-          fontSize="sm"
-          color="grey"
-          className={styles['help-text']}
-        >
+        <Box as="p" display="block" fontSize="sm" color="grey" className={styles['help-text']}>
           {helpText}
         </Box>
       )}

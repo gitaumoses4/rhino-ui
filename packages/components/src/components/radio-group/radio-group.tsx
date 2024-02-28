@@ -1,6 +1,4 @@
-import React, {
-  FC, ChangeEvent, FocusEvent, ReactNode,
-} from 'react';
+import React, { FC, ChangeEvent, FocusEvent, ReactNode } from 'react';
 import classNames from 'classnames';
 import { Box } from '../box/box';
 import { InputValidationMessage } from '../input-validation-message/input-validation-message';
@@ -98,13 +96,9 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   value = undefined,
   ...restProps
 }) => {
-  const groupClasses = classNames(
-    'rhinolabs-components__variables__form-control',
-    className,
-    {
-      [styles.loading]: error,
-    },
-  );
+  const groupClasses = classNames('rhinolabs-components__variables__form-control', className, {
+    [styles.loading]: error,
+  });
 
   return (
     <div className={classNames(styles['radio-group'], groupClasses)} {...restProps}>
@@ -117,8 +111,8 @@ export const RadioGroup: FC<RadioGroupProps> = ({
           </legend>
         )}
         <Box direction={direction} gap="sm" className={styles.options}>
-          {options
-            && options.map(option => (
+          {options &&
+            options.map((option) => (
               <RadioInput
                 key={option.id}
                 name={name}
@@ -134,9 +128,7 @@ export const RadioGroup: FC<RadioGroupProps> = ({
             ))}
         </Box>
       </fieldset>
-      {error && typeof error !== 'boolean' && (
-        <InputValidationMessage>{error}</InputValidationMessage>
-      )}
+      {error && typeof error !== 'boolean' && <InputValidationMessage>{error}</InputValidationMessage>}
     </div>
   );
 };

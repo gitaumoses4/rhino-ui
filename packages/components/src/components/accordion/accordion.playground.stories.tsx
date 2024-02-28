@@ -19,10 +19,7 @@ const meta: Meta<typeof Accordion> = {
         options: ['right', 'left', false],
       },
     },
-    ...boxPropsKeys.reduce(
-      (acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }),
-      {}
-    ),
+    ...boxPropsKeys.reduce((acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }), {}),
   },
 };
 
@@ -34,28 +31,19 @@ export const Playground: Story = {
   render: ({ hasCaret, openPanels, ...args }) => (
     <Accordion {...args}>
       <Accordion.Panel isOpen={openPanels.includes(0)}>
-        <Accordion.PanelSummary
-          isDetailsOpen={openPanels.includes(0)}
-          hasCaret={hasCaret}
-        >
+        <Accordion.PanelSummary isDetailsOpen={openPanels.includes(0)} hasCaret={hasCaret}>
           Question 0
         </Accordion.PanelSummary>
         <Accordion.PanelDetails>Answer 0</Accordion.PanelDetails>
       </Accordion.Panel>
       <Accordion.Panel isOpen={openPanels.includes(1)}>
-        <Accordion.PanelSummary
-          isDetailsOpen={openPanels.includes(1)}
-          hasCaret={hasCaret}
-        >
+        <Accordion.PanelSummary isDetailsOpen={openPanels.includes(1)} hasCaret={hasCaret}>
           Question 1
         </Accordion.PanelSummary>
         <Accordion.PanelDetails>Answer 1</Accordion.PanelDetails>
       </Accordion.Panel>
       <Accordion.Panel isOpen={openPanels.includes(2)}>
-        <Accordion.PanelSummary
-          isDetailsOpen={openPanels.includes(2)}
-          hasCaret={hasCaret}
-        >
+        <Accordion.PanelSummary isDetailsOpen={openPanels.includes(2)} hasCaret={hasCaret}>
           Question 2
         </Accordion.PanelSummary>
         <Accordion.PanelDetails>Answer 2</Accordion.PanelDetails>

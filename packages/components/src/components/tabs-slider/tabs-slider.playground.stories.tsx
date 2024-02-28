@@ -31,10 +31,7 @@ const meta: Meta<typeof TabsSlider> = {
         disable: true,
       },
     },
-    ...boxPropsKeys.reduce(
-      (acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }),
-      {}
-    ),
+    ...boxPropsKeys.reduce((acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }), {}),
   },
 };
 
@@ -45,15 +42,9 @@ export const Playground: Story = {
   render: ({ value, size, disabledTabs, ...args }) => (
     <Box gap="md">
       <TabsSlider {...args} value={value} size={size}>
-        <TabsSlider.Item isDisabled={disabledTabs.includes(0)}>
-          Tab 0
-        </TabsSlider.Item>
-        <TabsSlider.Item isDisabled={disabledTabs.includes(1)}>
-          Tab 1
-        </TabsSlider.Item>
-        <TabsSlider.Item isDisabled={disabledTabs.includes(2)}>
-          Tab 2
-        </TabsSlider.Item>
+        <TabsSlider.Item isDisabled={disabledTabs.includes(0)}>Tab 0</TabsSlider.Item>
+        <TabsSlider.Item isDisabled={disabledTabs.includes(1)}>Tab 1</TabsSlider.Item>
+        <TabsSlider.Item isDisabled={disabledTabs.includes(2)}>Tab 2</TabsSlider.Item>
       </TabsSlider>
       <TabPanels value={value}>
         <Box padding="md" background="grey-50">

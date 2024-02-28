@@ -7,7 +7,7 @@ export const getColumnKeys = (columns: Column[]): Key[] => {
   const columnKeys: React.Key[] = [];
   const keys: Record<React.Key, boolean> = {};
 
-  columns.forEach(column => {
+  columns.forEach((column) => {
     const { key, dataKey } = column || {};
     const shapedDataKey = dataKey?.includes(' ') ? dataKey.split(' ').join('-') : dataKey;
 

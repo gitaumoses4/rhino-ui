@@ -1,6 +1,4 @@
-import React, {
-  FC, ChangeEvent, FocusEvent, ReactNode,
-} from 'react';
+import React, { FC, ChangeEvent, FocusEvent, ReactNode } from 'react';
 import classNames from 'classnames';
 import { ResponsiveProp } from '../../types';
 import { Box, BoxProps } from '../box/box';
@@ -133,7 +131,7 @@ export const TextareaInput: FC<TextareaInputProps> = ({
   const inputWrapperClasses = classNames(
     'rhinolabs-components__variables__form-control',
     styles['textarea-input-wrapper'],
-    ...responsiveClasses.map(c => (styles[c])),
+    ...responsiveClasses.map((c) => styles[c]),
     {
       [styles.error]: error,
       [styles.disabled]: isDisabled,
@@ -173,10 +171,7 @@ export const TextareaInput: FC<TextareaInputProps> = ({
   return (
     <Box width="100%" className={className} {...restProps}>
       {label && !hideLabel && <FormLabel {...labelProps}>{label}</FormLabel>}
-      <Box
-        display="block"
-        className={inputWrapperClasses}
-      >
+      <Box display="block" className={inputWrapperClasses}>
         <Box as="textarea" {...inputProps} />
       </Box>
       {error && error !== true && <InputValidationMessage>{error}</InputValidationMessage>}

@@ -30,20 +30,17 @@ export const CardHeader: FC<CardHeaderProps> = ({
   title = null,
   ...restProps
 }) => {
-  const renderTitle = () => (
-    typeof title === 'string'
-      ? <Heading size="lg" as="h4">{title}</Heading>
-      : title
-  );
+  const renderTitle = () =>
+    typeof title === 'string' ? (
+      <Heading size="lg" as="h4">
+        {title}
+      </Heading>
+    ) : (
+      title
+    );
 
   return (
-    <Box
-      childGap={childGap}
-      display={display}
-      padding={padding}
-      className={className}
-      {...restProps}
-    >
+    <Box childGap={childGap} display={display} padding={padding} className={className} {...restProps}>
       {title && renderTitle()}
       {children}
     </Box>

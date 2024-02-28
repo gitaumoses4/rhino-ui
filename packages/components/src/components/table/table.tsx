@@ -42,7 +42,7 @@ export interface TableProps {
    * Remove borders around table, thead, tbody, td, etc.
    */
   isBorderless?: boolean;
-   /**
+  /**
    * Make Table more compact by cutting cell padding in half.
    */
   isCompact?: boolean;
@@ -109,12 +109,9 @@ export const Table: FC<TableProps> = ({
   useFixedTableLayout = false,
   truncateOverflow = false,
 }) => {
-  const containerClasses = classNames(
-    styles.container,
-    {
-      [styles['full-height']]: !!isScrollable?.y,
-    },
-  );
+  const containerClasses = classNames(styles.container, {
+    [styles['full-height']]: !!isScrollable?.y,
+  });
 
   const scrollContainerClasses = classNames(
     styles['scroll-container'],
@@ -126,15 +123,12 @@ export const Table: FC<TableProps> = ({
     className,
   );
 
-  const tableClasses = classNames(
-    styles.table,
-    {
-      [styles.fixed]: useFixedTableLayout,
-      [styles.striped]: isStriped,
-      [styles.borderless]: isBorderless,
-      [styles.compact]: isCompact,
-    },
-  );
+  const tableClasses = classNames(styles.table, {
+    [styles.fixed]: useFixedTableLayout,
+    [styles.striped]: isStriped,
+    [styles.borderless]: isBorderless,
+    [styles.compact]: isCompact,
+  });
 
   return (
     <div className={containerClasses}>

@@ -12,12 +12,15 @@ const labelMarginSizeMap = {
   lg: 'xs 0 0 0',
 };
 
-const computedResponsiveSize = ( // eslint-disable-line @typescript-eslint/explicit-module-boundary-types
+const computedResponsiveSize = (
+  // eslint-disable-line @typescript-eslint/explicit-module-boundary-types
   size: CheckboxInputProps['size'],
 ) => {
   if (size && !(typeof size === 'string') && typeof size === 'object') {
-    return Object.entries(size)
-      .reduce((acc, [key, value]) => ({ ...acc, [key]: labelMarginSizeMap[value || 'md'] }), {});
+    return Object.entries(size).reduce(
+      (acc, [key, value]) => ({ ...acc, [key]: labelMarginSizeMap[value || 'md'] }),
+      {},
+    );
   }
 
   return labelMarginSizeMap[size || 'md'] as string;
@@ -148,10 +151,7 @@ export const CheckboxInput: React.FC<CheckboxInputProps> = ({
 
   return (
     <Box className={className} {...restProps}>
-      <Box
-        alignItems="flex-start"
-        direction="row"
-      >
+      <Box alignItems="flex-start" direction="row">
         <Checkbox {...checkboxProps} labelledby={`${id}Label`} />
         {label && !hideLabel && <FormLabel {...labelProps}>{label}</FormLabel>}
       </Box>

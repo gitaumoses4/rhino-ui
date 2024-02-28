@@ -50,16 +50,7 @@ const meta: Meta<typeof Box> = {
     display: {
       control: {
         type: 'select',
-        options: [
-          'none',
-          'flex',
-          'inline-flex',
-          'block',
-          'inline-block',
-          'inline',
-          'inherit',
-          'grid',
-        ],
+        options: ['none', 'flex', 'inline-flex', 'block', 'inline-block', 'inline', 'inherit', 'grid'],
       },
     },
     direction: {
@@ -71,41 +62,19 @@ const meta: Meta<typeof Box> = {
     alignContent: {
       control: {
         type: 'select',
-        options: [
-          null,
-          'flex-start',
-          'flex-end',
-          'center',
-          'stretch',
-          'space-between',
-          'space-around',
-        ],
+        options: [null, 'flex-start', 'flex-end', 'center', 'stretch', 'space-between', 'space-around'],
       },
     },
     alignItems: {
       control: {
         type: 'select',
-        options: [
-          null,
-          'flex-start',
-          'flex-end',
-          'center',
-          'baseline',
-          'stretch',
-        ],
+        options: [null, 'flex-start', 'flex-end', 'center', 'baseline', 'stretch'],
       },
     },
     justifyContent: {
       control: {
         type: 'select',
-        options: [
-          'flex-start',
-          'flex-end',
-          'center',
-          'space-between',
-          'space-around',
-          'space-evenly',
-        ],
+        options: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly'],
       },
     },
     margin: {
@@ -275,17 +244,7 @@ const meta: Meta<typeof Box> = {
     overflow: {
       control: {
         type: 'select',
-        options: [
-          null,
-          'inherit',
-          'auto',
-          'initial',
-          'unset',
-          'visible',
-          'hidden',
-          'clip',
-          'scroll',
-        ],
+        options: [null, 'inherit', 'auto', 'initial', 'unset', 'visible', 'hidden', 'clip', 'scroll'],
       },
     },
     wrap: {
@@ -428,7 +387,7 @@ export const Playground: Story = {
           padding="sm"
         >
           {i + 1}
-        </Box>
+        </Box>,
       );
     }
 

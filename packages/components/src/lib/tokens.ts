@@ -37,22 +37,25 @@ export const BORDER_SIZE_VALUES = Object.values(size.border);
 export const BREAKPOINT_OPTIONS = Object.keys(size.breakpoint) as BreakpointSizeWithBase[];
 export const BREAKPOINT_VALUES = Object.values(size.breakpoint);
 
-export const BREAKPOINTS = [...Object.entries(size.breakpoint), ['base', 0]]
-  .map(([name, value]) => ({
-    name,
-    minWidth: parseInt(value as string, 10),
-  })) as Breakpoint[];
+export const BREAKPOINTS = [...Object.entries(size.breakpoint), ['base', 0]].map(([name, value]) => ({
+  name,
+  minWidth: parseInt(value as string, 10),
+})) as Breakpoint[];
 
 export const BRAND_COLOR_OPTIONS = (Object.keys(color.brand) as ColorName[])
-  .map(colorName => (
-    Object.keys(color.brand[colorName])
-      .map(colorGrade => (colorGrade === 'base' ? colorName : `${colorName}-${colorGrade}`))
-  )).flat() as BrandColor[];
+  .map((colorName) =>
+    Object.keys(color.brand[colorName]).map((colorGrade) =>
+      colorGrade === 'base' ? colorName : `${colorName}-${colorGrade}`,
+    ),
+  )
+  .flat() as BrandColor[];
 
 export const BRAND_COLOR_NAMES = Object.keys(color.brand) as ColorName[];
 export const BRAND_COLOR_VALUES = Object.values(color.brand);
-export const BASE_BRAND_COLORS = Object.entries({ ...color.brand })
-  .reduce((acc, [key, value]) => ({ ...acc, [key]: value?.base }), {}) as { [c in ColorName]: string };
+export const BASE_BRAND_COLORS = Object.entries({ ...color.brand }).reduce(
+  (acc, [key, value]) => ({ ...acc, [key]: value?.base }),
+  {},
+) as { [c in ColorName]: string };
 
 export const FONT_COLOR_OPTIONS = [...BRAND_COLOR_OPTIONS] as FontColor[];
 export const FONT_COLOR_VALUES = color.brand;

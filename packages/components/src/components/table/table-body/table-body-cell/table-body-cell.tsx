@@ -80,14 +80,11 @@ const TableBodyCell: FC<TableBodyCellProps> = ({
       className={tableCellClasses}
       display="table-cell"
       width={`${width}px`}
-      style={{ ...width && { minWidth: `${width}px`, maxWidth: `${width}px` } }}
+      style={{ ...(width && { minWidth: `${width}px`, maxWidth: `${width}px` }) }}
       scope="row"
     >
-      {(children === null || typeof children === 'undefined' || children === '')
-        ? emptyCellPlaceholder
-        : children}
+      {children === null || typeof children === 'undefined' || children === '' ? emptyCellPlaceholder : children}
     </Box>
-
   );
 };
 

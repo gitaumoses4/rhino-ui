@@ -1,11 +1,5 @@
 import React, { FC } from 'react';
-import {
-  FormikTouched,
-  FormikErrors,
-  FormikValues,
-  FieldAttributes,
-  getIn,
-} from 'formik';
+import { FormikTouched, FormikErrors, FormikValues, FieldAttributes, getIn } from 'formik';
 import { TimePicker, TimePickerProps } from '../../time-picker/time-picker';
 
 export interface FormikTimePickerProps extends Omit<TimePickerProps, 'onChange'> {
@@ -17,20 +11,13 @@ export interface FormikTimePickerProps extends Omit<TimePickerProps, 'onChange'>
   onChange?: TimePickerProps['onChange'];
 }
 
-export const FormikTimePicker: FC<FormikTimePickerProps> = (
-  {
-    field: {
-      name,
-      onBlur,
-      onChange: formikOnChange,
-      value,
-    },
-    form: { touched, errors },
-    options,
-    onChange,
-    ...props
-  },
-) => (
+export const FormikTimePicker: FC<FormikTimePickerProps> = ({
+  field: { name, onBlur, onChange: formikOnChange, value },
+  form: { touched, errors },
+  options,
+  onChange,
+  ...props
+}) => (
   <TimePicker
     {...props}
     name={name}

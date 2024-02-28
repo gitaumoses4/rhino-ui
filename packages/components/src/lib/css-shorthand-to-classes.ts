@@ -1,14 +1,7 @@
-import {
-  ResponsiveProp,
-  BreakpointSizeWithBase,
-} from '../types';
+import { ResponsiveProp, BreakpointSizeWithBase } from '../types';
 
 export function isValidSpacingValue(value?: string | ResponsiveProp<string | undefined>): boolean {
-  if (
-    value === undefined
-    || value === null
-    || (typeof value !== 'string' && typeof value !== 'object')
-  ) {
+  if (value === undefined || value === null || (typeof value !== 'string' && typeof value !== 'object')) {
     return false;
   }
 
@@ -37,7 +30,7 @@ export function generateBaseClasses(
   }
 
   const classes: string[] = [];
-  let shorthand: { [key: number]: string[]; };
+  let shorthand: { [key: number]: string[] };
 
   if (attribute === 'br') {
     shorthand = {
@@ -112,9 +105,9 @@ export function cssShorthandToClasses(
   const classes: string[] = [];
 
   if (typeof value === 'object') {
-    Object.keys(value).forEach(key => {
+    Object.keys(value).forEach((key) => {
       const baseClasses = generateBaseClasses(attribute, value[key as BreakpointSizeWithBase]);
-      const responsiveClasses = baseClasses?.map(baseClass => (key === 'base' ? baseClass : `${baseClass}-${key}`));
+      const responsiveClasses = baseClasses?.map((baseClass) => (key === 'base' ? baseClass : `${baseClass}-${key}`));
       classes.push(...responsiveClasses);
     });
   } else if (typeof value === 'string') {

@@ -1,9 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { boxPropsKeys } from '../box/box';
-import {
-  SelectInputNative,
-  SelectInputNativeProps,
-} from './select-input-native';
+import { SelectInputNative, SelectInputNativeProps } from './select-input-native';
 
 const meta: Meta<typeof SelectInputNative> = {
   title: 'Components/SelectInputNative/Playground',
@@ -54,10 +51,7 @@ const meta: Meta<typeof SelectInputNative> = {
     options: {
       control: 'object',
     },
-    ...boxPropsKeys.reduce(
-      (acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }),
-      {}
-    ),
+    ...boxPropsKeys.reduce((acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }), {}),
   },
 };
 

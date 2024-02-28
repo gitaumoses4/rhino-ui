@@ -8,13 +8,7 @@ export interface HookWindowSize {
   outerHeight?: number;
 }
 export const useWindowSize = (): HookWindowSize => {
-  const {
-    innerWidth,
-    innerHeight,
-    outerHeight,
-    outerWidth,
-    isCreated,
-  } = React.useContext(ResponsiveContext);
+  const { innerWidth, innerHeight, outerHeight, outerWidth, isCreated } = React.useContext(ResponsiveContext);
 
   if (isCreated) {
     return {
