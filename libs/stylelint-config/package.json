@@ -12,7 +12,7 @@
   "dependencies": {
     "stylelint": "^15.11.0",
     "stylelint-config-concentric-order": "^4.0.1",
-    "stylelint-config-css-modules": "^2.3.0",
+    "stylelint-config-css-modules": "^4.4.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-sass-guidelines": "^10.0.0"
   }
