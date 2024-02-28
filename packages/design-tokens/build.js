@@ -9,8 +9,7 @@ const scssVariablesFont = require('./formats/scss-fariables-font/scss-fariables-
 const useSizeUnit = require('./transforms/use-size-unit/use-size-unit');
 const customKebab = require('./transforms/custom-kebab/custom-kebab');
 const createIconComponents = require('./utils/create-icon-components/create-icon-components');
-const createFileHeader = require("./utils/create-file-header/create-file-header");
-const jsFormat = require("./formats/js-format/js-format");
+const jsFormat = require('./formats/js-format/js-format');
 
 console.log('Build started...');
 console.log('==============================================');
@@ -18,30 +17,29 @@ console.log('==============================================');
 // Custom Filters
 StyleDictionary.registerFilter({
   name: 'isCategoryColor',
-  matcher: prop => prop.attributes.category === 'color',
+  matcher: (prop) => prop.attributes.category === 'color',
 });
 
 StyleDictionary.registerFilter({
   name: 'isCategorySize',
-  matcher: prop => prop.attributes.category === 'size',
+  matcher: (prop) => prop.attributes.category === 'size',
 });
 
 StyleDictionary.registerFilter({
   name: 'isCategoryAsset',
-  matcher: prop => prop.attributes.category === 'asset',
+  matcher: (prop) => prop.attributes.category === 'asset',
 });
 
 StyleDictionary.registerFilter({
   name: 'isBrandColor',
-  matcher: prop =>
-    prop.attributes.category === 'color' && prop.attributes.type === 'brand',
+  matcher: (prop) => prop.attributes.category === 'color' && prop.attributes.type === 'brand',
 });
 
 // Custom Formats
 StyleDictionary.registerFormat(utilityClass);
 StyleDictionary.registerFormat(cssVariablesFont);
 StyleDictionary.registerFormat(scssVariablesFont);
-StyleDictionary.registerFormat(jsFormat)
+StyleDictionary.registerFormat(jsFormat);
 
 // Custom Transforms
 StyleDictionary.registerTransform(useSizeUnit);
@@ -63,8 +61,6 @@ const FIGMA_TOKENS_DOCUMENT = '';
  */
 const FIGMA_FILE_VERSION = '';
 
-
-
 try {
   let properties = {};
 
@@ -77,12 +73,11 @@ try {
     properties = { ...properties, ...localVariables };
   }
 
-
   /**
-  * Generate semantic (light, lighter, etc...) colors
-  * from lightness numbers (50, 100, etc...)
-  * It keeps the original colors as well as the semantic versions.
-  */
+   * Generate semantic (light, lighter, etc...) colors
+   * from lightness numbers (50, 100, etc...)
+   * It keeps the original colors as well as the semantic versions.
+   */
   properties = mapSemanticColors(properties);
 
   /**
@@ -125,7 +120,6 @@ try {
   console.log('\n==============================================');
   console.log('\nAll done!');
   console.log('\n==============================================');
-
 } catch (e) {
   console.error(e);
   throw e; // log the error but this will stop the build

@@ -17,10 +17,9 @@ const BRAND_COLORS = 'BRAND_COLORS';
 const FONT_COLORS = 'FONT_COLORS';
 const BRAND_COLOR_NAMES = 'BRAND_COLOR_NAMES';
 
-const brandColorOptions = [].concat.apply(
-  [],
-  Object.keys(brandColors).map(colorName =>
-    Object.keys(brandColors[colorName]).map(colorGrade =>
+const brandColorOptions = [].concat(
+  ...Object.keys(brandColors).map((colorName) =>
+    Object.keys(brandColors[colorName]).map((colorGrade) =>
       colorGrade === 'base' ? colorName : `${colorName}-${colorGrade}`,
     ),
   ),
@@ -28,10 +27,9 @@ const brandColorOptions = [].concat.apply(
 
 const brandColorNames = Object.keys(brandColors);
 
-const fontColorOptions = [].concat.apply(
-  [],
-  Object.keys(brandColors).map(colorName =>
-    Object.keys(brandColors[colorName]).map(colorGrade =>
+const fontColorOptions = [].concat(
+  ...Object.keys(brandColors).map((colorName) =>
+    Object.keys(brandColors[colorName]).map((colorGrade) =>
       colorGrade === 'base' ? colorName : `${colorName}-${colorGrade}`,
     ),
   ),
@@ -81,10 +79,8 @@ const FONT_FAMILY_OPTIONS = 'FONT_FAMILY_OPTIONS';
  * ICONS
  */
 const sourceIconsDir = path.join(__dirname, '..', '..', 'icons/');
-const iconFiles = fs
-  .readdirSync(sourceIconsDir)
-  .filter(fileName => path.extname(fileName).toLowerCase() === '.svg');
-const iconNames = iconFiles.map(iconFile => iconFile.substr(0, iconFile.lastIndexOf('.')));
+const iconFiles = fs.readdirSync(sourceIconsDir).filter((fileName) => path.extname(fileName).toLowerCase() === '.svg');
+const iconNames = iconFiles.map((iconFile) => iconFile.substr(0, iconFile.lastIndexOf('.')));
 const ICON_NAMES = 'ICON_NAMES';
 
 /**
@@ -95,26 +91,26 @@ const writeArray = (array, arrayName, options = { lineBreak: true, asConst: true
 
   let result = `const ${arrayName} = [`;
 
-  array.forEach(element => {
+  array.forEach((element) => {
     result = `${result}\n  '${element}',`;
   });
 
   return `${result}\n]${asConst ? ' as const' : ''};\n${lineBreak ? '\n' : ''}`;
 };
 
-const writeExport = string => 'export '.concat(string);
+const writeExport = (string) => 'export '.concat(string);
 
 const writeUnionTypeFromArray = (typeName, arrayName) => {
   return `type ${typeName} = typeof ${arrayName}[number];\n`;
 };
 
-const createFileHeader = currentFile =>
+const createFileHeader = (currentFile) =>
   `/**\n* This file was auto-generated. DO NOT edit the contents of this file directly.\n*/\n\n${currentFile}`; // eslint-disable-line max-len
 
 /**
  * TOKEN CONSTANT CREATION
  */
-const createColorTokens = currentFile => {
+const createColorTokens = (currentFile) => {
   let result = currentFile;
 
   result = result.concat(writeExport(writeArray(brandColorOptions, BRAND_COLORS)));
@@ -124,7 +120,7 @@ const createColorTokens = currentFile => {
   return result;
 };
 
-const createSizeTokens = currentFile => {
+const createSizeTokens = (currentFile) => {
   let result = currentFile;
 
   result = result.concat(writeArray(borderSizeOptions, BORDER_SIZES));
@@ -143,13 +139,13 @@ const createSizeTokens = currentFile => {
   return result;
 };
 
-const createAssetTokens = currentFile => {
+const createAssetTokens = (currentFile) => {
   let result = currentFile;
 
   result = result.concat(writeArray(fontFamilyOptions, FONT_FAMILY_OPTIONS));
 
   return result;
-}
+};
 
 const createIconNames = (currentFile, asConst = true) => {
   let result = currentFile;
@@ -162,7 +158,7 @@ const createIconNames = (currentFile, asConst = true) => {
 /**
  * TYPE CREATION
  */
-const createColorTypes = currentFile => {
+const createColorTypes = (currentFile) => {
   let result = currentFile;
 
   result = result.concat(writeExport(writeUnionTypeFromArray('BrandColor', BRAND_COLORS)));
@@ -172,13 +168,11 @@ const createColorTypes = currentFile => {
   return result;
 };
 
-const createSizeTypes = currentFile => {
+const createSizeTypes = (currentFile) => {
   let result = currentFile;
 
   result = result.concat(writeExport(writeUnionTypeFromArray('BorderSize', BORDER_SIZES)));
-  result = result.concat(
-    writeExport(writeUnionTypeFromArray('BorderRadiusSize', BORDER_RADIUS_SIZES)),
-  );
+  result = result.concat(writeExport(writeUnionTypeFromArray('BorderRadiusSize', BORDER_RADIUS_SIZES)));
   result = result.concat(writeExport(writeUnionTypeFromArray('BoxShadowSize', BOX_SHADOW_SIZES)));
   result = result.concat(writeExport(writeUnionTypeFromArray('BreakpointSize', BREAKPOINT_SIZES)));
   result = result.concat(writeExport(writeUnionTypeFromArray('FontSize', FONT_SIZES)));
@@ -193,15 +187,14 @@ const createSizeTypes = currentFile => {
   return result;
 };
 
-
-const createAssetTypes = currentFile => {
+const createAssetTypes = (currentFile) => {
   let result = currentFile;
   result = result.concat(writeExport(writeUnionTypeFromArray('FontFamily', FONT_FAMILY_OPTIONS)));
 
   return result;
 };
 
-const createIconTypes = currentFile => {
+const createIconTypes = (currentFile) => {
   let result = currentFile;
   result = result.concat(writeExport(writeUnionTypeFromArray('IconName', ICON_NAMES)));
 

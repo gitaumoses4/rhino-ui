@@ -5,7 +5,7 @@ const nestInsideMediaQuery = (css, breakpoint) => {
   output += css;
   output += `}\n\n`;
 
-  return output
-}
+  return output;
+};
 
 module.exports = nestInsideMediaQuery;

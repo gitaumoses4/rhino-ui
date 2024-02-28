@@ -9,7 +9,7 @@ if (!process.env.FIGMA_PERSONAL_ACCESS_TOKEN) {
 
 const requestConfig = {
   method: 'GET',
-  headers: { "x-figma-token": process.env.FIGMA_PERSONAL_ACCESS_TOKEN }
+  headers: { 'x-figma-token': process.env.FIGMA_PERSONAL_ACCESS_TOKEN },
 };
 
 const requestUrl = 'https://api.figma.com/v1/files/';
