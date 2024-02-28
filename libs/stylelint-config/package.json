@@ -6,10 +6,11 @@
   "description": "Stylelint configuration for Rhino UI",
   "main": "src/index.js",
   "scripts": {
-    "eslint": "eslint src --fix",
-    "format": "prettier --write **/src/** --cache "
+    "eslint": "eslint src --fix"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@rhino-ui/eslint-config": "workspace:^",
+    "eslint": "^8.57.0",
     "stylelint": "^15.11.0",
     "stylelint-config-concentric-order": "^4.0.1",
     "stylelint-config-css-modules": "^4.4.0",
