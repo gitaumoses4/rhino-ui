@@ -38,26 +38,14 @@ export interface HeadingProps {
   [x: string]: any; // eslint-disable-line
 }
 
-export const Heading: FC<HeadingProps> = ({
-  as = 'h4',
-  children,
-  className,
-  variant,
-  size,
-  ...restProps
-}) => {
+export const Heading: FC<HeadingProps> = ({ as = 'h4', children, className, variant, size, ...restProps }) => {
   const element = getElementType(Heading, { as });
 
   const headingSize = size || HEADING_DEFAULT_SIZE_MAP[as];
 
-  const classes = classNames(
-    styles.heading,
-    className,
-    generateResponsiveClasses('font-size', headingSize),
-    {
-      [`font-color-${variant}`]: variant,
-    },
-  );
+  const classes = classNames(styles.heading, className, generateResponsiveClasses('font-size', headingSize), {
+    [`font-color-${variant}`]: variant,
+  });
 
   return createElement(element, { className: classes, ...restProps }, children);
 };

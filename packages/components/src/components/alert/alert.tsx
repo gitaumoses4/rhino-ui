@@ -1,6 +1,4 @@
-import React, {
-  FC, ReactNode, MouseEvent, KeyboardEvent,
-} from 'react';
+import React, { FC, ReactNode, MouseEvent, KeyboardEvent } from 'react';
 import classNames from 'classnames';
 import { Heading } from '../heading/heading';
 import { Box } from '../box/box';
@@ -52,7 +50,7 @@ export interface AlertProps {
    * The type/color of the alert to show.
    */
   variant?: AlertVariant;
-    /**
+  /**
    * Additional props to be spread to rendered element
    */
   [x: string]: any; // eslint-disable-line
@@ -70,9 +68,7 @@ export const Alert: FC<AlertProps> = ({
   variant = 'default',
   ...restProps
 }) => {
-  const handleClose = (
-    event: MouseEvent<HTMLOrSVGElement> | KeyboardEvent<HTMLSpanElement>,
-  ): void => {
+  const handleClose = (event: MouseEvent<HTMLOrSVGElement> | KeyboardEvent<HTMLSpanElement>): void => {
     if (!onClose) return;
 
     onClose(event);
@@ -80,10 +76,7 @@ export const Alert: FC<AlertProps> = ({
 
   const renderAlertIcon = (): ReactNode => (
     <Box fontSize="lg" className={styles[`alert__icon__${variant}`]}>
-      <Icon
-        name={ALERT_ICONS_MAP[variant].icon}
-        data-testid={`alert-icon-${variant}-test-id`}
-      />
+      <Icon name={ALERT_ICONS_MAP[variant].icon} data-testid={`alert-icon-${variant}-test-id`} />
     </Box>
   );
 
@@ -101,11 +94,7 @@ export const Alert: FC<AlertProps> = ({
     );
   };
 
-  const alertContainerClasses: string = classNames(
-    styles[`alert__${variant}`],
-    styles.alert,
-    className,
-  );
+  const alertContainerClasses: string = classNames(styles[`alert__${variant}`], styles.alert, className);
 
   return (
     <Box

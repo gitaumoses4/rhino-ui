@@ -17,24 +17,13 @@ const Default: Story = {
   render: (args) => (
     <Box>
       {ALERT_VARIANTS.map((variant) => (
-        <Alert
-          {...args}
-          className="m-bottom-md"
-          variant={variant}
-          key={variant}
-        />
+        <Alert {...args} className="m-bottom-md" variant={variant} key={variant} />
       ))}
       <Box className="m-top-xl m-bottom-md">
         <Heading size="md">isCompact</Heading>
       </Box>
       {ALERT_VARIANTS.map((variant) => (
-        <Alert
-          {...args}
-          className="m-bottom-md"
-          variant={variant}
-          isCompact
-          key={`compact-${variant}`}
-        />
+        <Alert {...args} className="m-bottom-md" variant={variant} isCompact key={`compact-${variant}`} />
       ))}
     </Box>
   ),

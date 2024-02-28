@@ -1,10 +1,5 @@
 import React, { FC } from 'react';
-import {
-  FormikTouched,
-  FormikErrors,
-  FormikValues,
-  FieldAttributes, getIn,
-} from 'formik';
+import { FormikTouched, FormikErrors, FormikValues, FieldAttributes, getIn } from 'formik';
 import { TextareaInput, TextareaInputProps } from '../../textarea-input/textarea-input';
 
 export interface FormikTextareaInputProps extends Omit<TextareaInputProps, 'onChange'> {
@@ -17,12 +12,7 @@ export interface FormikTextareaInputProps extends Omit<TextareaInputProps, 'onCh
 }
 
 export const FormikTextareaInput: FC<FormikTextareaInputProps> = ({
-  field: {
-    name,
-    onBlur,
-    onChange: formikOnChange,
-    value,
-  },
+  field: { name, onBlur, onChange: formikOnChange, value },
   form: { touched, errors },
   onChange,
   id,

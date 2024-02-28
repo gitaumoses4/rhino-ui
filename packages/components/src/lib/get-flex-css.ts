@@ -54,8 +54,8 @@ export function getFlexClasses(value?: string): string[] | undefined {
  * @param {string} [value] spacing token value
  */
 export function getFlexCss(value?: ResponsiveProp<FlexProperty> | string): StylesAndClasses<FlexProperty> {
-  return ({
+  return {
     styles: getFlexStyles(value as string),
     classes: getFlexClasses(value as string),
-  });
+  };
 }

@@ -1,14 +1,6 @@
-import {
-  Key,
-  KeyboardEvent,
-  MouseEvent,
-  ReactNode,
-} from 'react';
+import { Key, KeyboardEvent, MouseEvent, ReactNode } from 'react';
 
-import {
-  OptionTypeBase,
-  ValueType,
-} from 'react-select';
+import { OptionTypeBase, ValueType } from 'react-select';
 
 import {
   BorderRadiusSize as BorderRadius,
@@ -42,12 +34,12 @@ export type BreakpointSizeWithBase = BreakpointSize | 'base';
 export type Breakpoint = {
   name: BreakpointSizeWithBase;
   minWidth: number; // min width in pixels
-}
+};
 
 export type DimensionSize = WidthSize | HeightSize;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type UnknownPropertiesObjType = { [key: string]: any; };
+export type UnknownPropertiesObjType = { [key: string]: any };
 
 export interface FlexProperty {
   flexGrow?: number | string;
@@ -59,7 +51,7 @@ export interface FlexProperty {
 export type StylesAndClasses<T> = {
   styles?: T;
   classes?: string[];
-}
+};
 
 export type CssDimensionAbbreviation = 'h' | 'w' | 'mw' | 'mh' | 'minw' | 'minh';
 
@@ -70,63 +62,36 @@ export type CssDimensionValue = `${number}${CssDimensionUnit}`;
 export type CssSpacingAbbreviation = 'm' | 'p';
 
 export type CssJustifyContentValue =
-  'space-around' |
-  'space-between' |
-  'center' |
-  'flex-end' |
-  'space-evenly' |
-  'flex-start' |
-  'stretch';
+  | 'space-around'
+  | 'space-between'
+  | 'center'
+  | 'flex-end'
+  | 'space-evenly'
+  | 'flex-start'
+  | 'stretch';
 
-export type CssAlignContentValue =
-  'flex-start' |
-  'flex-end' |
-  'center' |
-  'stretch' |
-  'space-between' |
-  'space-around';
+export type CssAlignContentValue = 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'space-between' | 'space-around';
 
 export type CssFlexDirectionValue = 'column' | 'column-reverse' | 'row' | 'row-reverse' | undefined;
 
-export type CssAlignItemsValue =
-  'flex-start' |
-  'flex-end' |
-  'center' |
-  'baseline' |
-  'stretch';
+export type CssAlignItemsValue = 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
 
-export type CssFlexValue =
-  'auto' |
-  'initial' |
-  'none' |
-  'inherit' |
-  'unset';
+export type CssFlexValue = 'auto' | 'initial' | 'none' | 'inherit' | 'unset';
 
-export type CssOverflowValue =
-  'visible' |
-  'hidden' |
-  'clip' |
-  'scroll' |
-  'auto' |
-  'inherit' |
-  'initial' |
-  'unset';
+export type CssOverflowValue = 'visible' | 'hidden' | 'clip' | 'scroll' | 'auto' | 'inherit' | 'initial' | 'unset';
 
 export type CssDisplayValue =
-  'none' |
-  'flex' |
-  'inline-flex' |
-  'block' |
-  'inline-block' |
-  'inline' |
-  'inherit' |
-  'grid' |
-  'table-cell';
+  | 'none'
+  | 'flex'
+  | 'inline-flex'
+  | 'block'
+  | 'inline-block'
+  | 'inline'
+  | 'inherit'
+  | 'grid'
+  | 'table-cell';
 
-export type CssTextAlignValue =
-  'left' |
-  'center' |
-  'right';
+export type CssTextAlignValue = 'left' | 'center' | 'right';
 
 export type BaseSpacing = SpacingSize | string | undefined;
 export type BorderRadiusSize = BorderRadius | string | undefined;
@@ -135,7 +100,7 @@ export declare type ResponsiveProp<T> = { [breakpoint in BreakpointSizeWithBase]
 
 export type Row = UnknownPropertiesObjType;
 
-export type Cell = string | number | { [key: string]: unknown; } | unknown[];
+export type Cell = string | number | { [key: string]: unknown } | unknown[];
 
 export declare type Column = {
   /**
@@ -189,14 +154,12 @@ export declare type Column = {
    * Specific width of the column. Use in tandem with `useFixedWidthColumns` in the parent table.
    */
   width?: number;
-}
+};
 
-export type EventWithColumnKey =
-  (
-    MouseEvent<HTMLTableHeaderCellElement> |
-    KeyboardEvent<HTMLTableHeaderCellElement>
-  )
-  & { sortedKey: Key | undefined; };
+export type EventWithColumnKey = (
+  | MouseEvent<HTMLTableHeaderCellElement>
+  | KeyboardEvent<HTMLTableHeaderCellElement>
+) & { sortedKey: Key | undefined };
 
 export type SimulatedEventPayloadType = {
   target: {

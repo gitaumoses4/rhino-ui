@@ -1,27 +1,17 @@
 import React, { FC, ReactNode } from 'react';
 import classNames from 'classnames';
-import {
-  BrandColor, FontColor, FontSize, BaseSpacing, ResponsiveProp,
-} from '../../types';
+import { BrandColor, FontColor, FontSize, BaseSpacing, ResponsiveProp } from '../../types';
 import { generateResponsiveClasses } from '../../lib/generate-responsive-classes';
 import styles from './badge.module.scss';
 import { Box } from '../box/box';
 
 export type BadgeSize = 'sm' | 'md' | 'lg' | 'xl';
 
-export type BadgeVariant =
-  | 'info'
-  | 'primary'
-  | 'success'
-  | 'secondary'
-  | 'tertiary'
-  | 'warning'
-  | 'danger'
-  | 'default';
+export type BadgeVariant = 'info' | 'primary' | 'success' | 'secondary' | 'tertiary' | 'warning' | 'danger' | 'default';
 
-export type BadgeColorAttributes = { font: FontColor; background: BrandColor; };
+export type BadgeColorAttributes = { font: FontColor; background: BrandColor };
 
-export type BadgeSizeAttributes = { fontSize: FontSize; padding: BaseSpacing; };
+export type BadgeSizeAttributes = { fontSize: FontSize; padding: BaseSpacing };
 export interface BadgeProps {
   /**
    * Custom class to apply to the badge container div.
@@ -63,23 +53,14 @@ export const Badge: FC<BadgeProps> = ({
   size = 'md',
   ...restProps
 }) => {
-  const responsiveClasses = generateResponsiveClasses('size', size).map(c => styles[c]);
+  const responsiveClasses = generateResponsiveClasses('size', size).map((c) => styles[c]);
 
-  const badgeClasses: string = classNames(
-    styles.badge,
-    className,
-    responsiveClasses,
-    {
-      [styles[variant]]: variant,
-    },
-  );
+  const badgeClasses: string = classNames(styles.badge, className, responsiveClasses, {
+    [styles[variant]]: variant,
+  });
 
   return (
-    <Box
-      className={badgeClasses}
-      display="inline-block"
-      {...restProps}
-    >
+    <Box className={badgeClasses} display="inline-block" {...restProps}>
       {message}
     </Box>
   );

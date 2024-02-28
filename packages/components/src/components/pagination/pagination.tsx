@@ -2,12 +2,7 @@ import React, { FC, ReactNode, useMemo } from 'react';
 import classNames from 'classnames';
 import { Box } from '../box/box';
 import { Button } from '../button/button';
-import {
-  generatePages,
-  generatePageRange,
-  generatePageTotal,
-  generateActiveListRange,
-} from './pagination.utilities';
+import { generatePages, generatePageRange, generatePageTotal, generateActiveListRange } from './pagination.utilities';
 
 export interface PaginationProps {
   /**
@@ -72,10 +67,7 @@ export const Pagination: FC<PaginationProps> = ({
   numberOfPagesDisplayed = 5,
   prevPageText = 'Previous',
 }) => {
-  const pageTotal = useMemo(
-    () => generatePageTotal(totalItemsCount, itemsPerPage),
-    [totalItemsCount, itemsPerPage],
-  );
+  const pageTotal = useMemo(() => generatePageTotal(totalItemsCount, itemsPerPage), [totalItemsCount, itemsPerPage]);
 
   const pageRange = useMemo(
     () => generatePageRange(numberOfPagesDisplayed, pageTotal),
@@ -151,9 +143,7 @@ export const Pagination: FC<PaginationProps> = ({
         }}
         fontSize={isCompact ? 'sm' : 'md'}
       >
-        {isTotalVisible && (
-          `Showing ${activeListRange.first}-${activeListRange.last} of ${totalItemsCount}`
-        )}
+        {isTotalVisible && `Showing ${activeListRange.first}-${activeListRange.last} of ${totalItemsCount}`}
       </Box>
     </Box>
   );

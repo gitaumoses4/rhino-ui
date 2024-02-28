@@ -10,7 +10,7 @@ import React from 'react';
  */
 export function getElementType( // eslint-disable-line import/prefer-default-export
   Component: React.Component | React.FC,
-  props: { [key: string]: unknown; },
+  props: { [key: string]: unknown },
   getDefault?: () => string,
 ): string {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

@@ -6,11 +6,11 @@
  * @returns {string} Kebab-cased string.
  */
 function kebabCase(string) {
-  var result = string;
+  let result = string;
 
   // Convert camelCase capitals to kebab-case.
   result = result.replace(/([a-z][A-Z])/g, function (match) {
-    return match.substr(0, 1) + '-' + match.substr(1, 1).toLowerCase();
+    return `${match.substr(0, 1)}-${match.substr(1, 1).toLowerCase()}`;
   });
 
   // Convert non-camelCase capitals to lowercase.

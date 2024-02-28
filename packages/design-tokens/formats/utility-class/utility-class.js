@@ -5,15 +5,10 @@ const nestInsideMediaQuery = require('../../utils/nest-inside-media-query/nest-i
 const utilities = require('./utilities-config');
 
 const generateCssVariable = (prop) => {
-  const {
-    category,
-    type,
-    item,
-    subitem,
-  } = prop.attributes;
+  const { category, type, item, subitem } = prop.attributes;
 
-  return `var(--${category}-${type}-${item}${subitem ? '-' + subitem : ''})`;
-}
+  return `var(--${category}-${type}-${item}${subitem ? `-${subitem}` : ''})`;
+};
 
 const generateShorthandProperties = (utility, prop, variation) => {
   const single = ['top', 'right', 'bottom', 'left']; // CSS Attribute specifies the variation. E.G: 'margin-bottom: <value>'
@@ -69,7 +64,8 @@ const generateBorderRadiusShorthandProperties = (utility, prop, variation) => {
   if (single.includes(variation)) {
     property += `-${variation}`;
     output = `border-${variation}-radius: ${value};`;
-  } else { // all corners of the element
+  } else {
+    // all corners of the element
     output = `${property}: ${value};`;
   }
 
@@ -80,21 +76,17 @@ const generateUtilityClass = (utility, prop, variation, breakpoint, state) => {
   const tokenCategory = prop.attributes.category;
   const tokenType = prop.attributes.type;
 
-  const {
-    name,
-    abbreviation,
-    hover,
-  } = utility;
+  const { name, abbreviation, hover } = utility;
   let utilityClass = '';
 
   if (tokenCategory === utility.tokenCategory && tokenType === utility.tokenType) {
-    utilityClass += `${abbreviation ? abbreviation : name}`;
+    utilityClass += `${abbreviation || name}`;
 
     if (variation) {
       utilityClass += `-${variation}`;
     }
 
-    utilityClass += `-${prop.attributes.item}`
+    utilityClass += `-${prop.attributes.item}`;
 
     if (prop.attributes.subitem && prop.attributes.subitem !== 'base') {
       utilityClass += `-${prop.attributes.subitem}`;
@@ -118,23 +110,26 @@ const generateUtilityClass = (utility, prop, variation, breakpoint, state) => {
   }
 
   return utilityClass;
-}
+};
 
-const processUtilities = (utilities, prop, breakpoint, options = {
-  indentationLevel: 0,
-  state: null,
-}) => {
-  const {
-    indentationLevel,
-    state,
-  } = options;
+const processUtilities = (
+  // eslint-disable-next-line no-shadow
+  utilities,
+  prop,
+  breakpoint,
+  options = {
+    indentationLevel: 0,
+    state: null,
+  },
+) => {
+  const { indentationLevel, state } = options;
   let output = '';
 
-  utilities.forEach(utility => {
+  utilities.forEach((utility) => {
     utility.variations.forEach((variation) => {
       const utilityClass = generateUtilityClass(utility, prop, variation, breakpoint, state);
       if (utilityClass) {
-        output += addNewLines(indentLine(utilityClass, indentationLevel), 2)
+        output += addNewLines(indentLine(utilityClass, indentationLevel), 2);
       }
     });
   });
@@ -144,62 +139,62 @@ const processUtilities = (utilities, prop, breakpoint, options = {
 
 const utilityClass = {
   name: 'css/utility-classes',
-  formatter: function (dictionary) {
+  formatter(dictionary) {
     let output = createFileHeader();
-    const breakpoints = dictionary.allProperties.filter(prop => prop.attributes.type === 'breakpoint');
+    const breakpoints = dictionary.allProperties.filter((prop) => prop.attributes.type === 'breakpoint');
     /**
      * Since our design system uses responsive, mobile-first design,
      * it is IMPERATIVE that these breakpoints be sorted in ascending order
      * by their min-width value. This ensures that whenever
      * there are two matching media queries, the LARGER one will win out.
-     * E.G if the viewport width is 1300px, all media queries match, but if 
+     * E.G if the viewport width is 1300px, all media queries match, but if
      * there is a class that is applied specifically for the 'hd' viewport
      * it should win out over the others. The only way to guarantee it
      * is to have these declared in order so the native CSS cascade works as intended.
      */
     const sortedBreakpoints = breakpoints.sort((a, b) => parseInt(a.original.value) - parseInt(b.original.value));
-    
+
     /**
      * We depend on 'COLOR' category coming in before 'SIZE' category. This is important due
      * to CSS hierarchy of border and border-color properties. In order for border-color to successfully
      * override border it has to be declared after border.
      */
-    dictionary.allProperties.forEach(prop => {
+    dictionary.allProperties.forEach((prop) => {
       output += processUtilities(utilities, prop);
 
       /**
        * Hover States
        */
-      const hoverUtilities = utilities.filter(utility => utility.hover);
+      const hoverUtilities = utilities.filter((utility) => utility.hover);
       output += processUtilities(hoverUtilities, prop, null, { state: 'hover' });
 
       /**
        * Focus States
        */
-      const focusUtilities = utilities.filter(utility => utility.hover);
+      const focusUtilities = utilities.filter((utility) => utility.hover);
       output += processUtilities(focusUtilities, prop, null, { state: 'focus' });
     });
 
-    sortedBreakpoints.forEach(breakpoint => {
+    sortedBreakpoints.forEach((breakpoint) => {
       let responsiveUtilityClasses = '';
-      let responsiveUtilities = utilities.filter(utility => utility.responsive);
-      let responsiveAndHoverUtilities = responsiveUtilities.filter(utility => utility.hover);
-      let responsiveAndFocusUtilities = responsiveUtilities.filter(utility => utility.focus);
+      const responsiveUtilities = utilities.filter((utility) => utility.responsive);
+      const responsiveAndHoverUtilities = responsiveUtilities.filter((utility) => utility.hover);
+      const responsiveAndFocusUtilities = responsiveUtilities.filter((utility) => utility.focus);
 
-      dictionary.allProperties.forEach(prop => {
+      dictionary.allProperties.forEach((prop) => {
         responsiveUtilityClasses += processUtilities(responsiveUtilities, prop, breakpoint.attributes.item, {
           indentationLevel: 2,
         });
       });
 
-      dictionary.allProperties.forEach(prop => {
+      dictionary.allProperties.forEach((prop) => {
         responsiveUtilityClasses += processUtilities(responsiveAndHoverUtilities, prop, breakpoint.attributes.item, {
           indentationLevel: 2,
           state: 'hover',
         });
       });
 
-      dictionary.allProperties.forEach(prop => {
+      dictionary.allProperties.forEach((prop) => {
         responsiveUtilityClasses += processUtilities(responsiveAndFocusUtilities, prop, breakpoint.attributes.item, {
           indentationLevel: 2,
           state: 'focus',

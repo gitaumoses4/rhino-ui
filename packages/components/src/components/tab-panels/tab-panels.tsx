@@ -6,14 +6,7 @@ export interface TabPanelsProps extends BoxProps {
   value: number;
 }
 
-export const TabPanels: React.FC<TabPanelsProps> = ({
-  children,
-  value,
-}) => {
+export const TabPanels: React.FC<TabPanelsProps> = ({ children, value }) => {
   const filteredChildren = filter(children, (_child, index) => index === value);
-  return (
-    <Box role="tabpanel">
-      {filteredChildren}
-    </Box>
-  );
+  return <Box role="tabpanel">{filteredChildren}</Box>;
 };

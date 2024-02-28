@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["@rhino-ui/eslint-config"],
+  extends: ['@rhino-ui/eslint-config'],
 };

@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  FormikTouched,
-  FormikErrors,
-  FieldAttributes,
-  FormikValues,
-  getIn,
-} from 'formik';
+import { FormikTouched, FormikErrors, FieldAttributes, FormikValues, getIn } from 'formik';
 import { Toggle } from '../../toggle/toggle';
 
 export interface FormikToggleProps {

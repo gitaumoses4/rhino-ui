@@ -28,19 +28,13 @@ export const AccordionPanelSummary: React.FC<AccordionPanelSummaryProps> = ({
   >
     {hasCaret === 'left' && (
       <Box>
-        <Icon
-          name={isDetailsOpen ? 'caret-sm-down' : 'caret-sm-right'}
-          color="grey-500"
-        />
+        <Icon name={isDetailsOpen ? 'caret-sm-down' : 'caret-sm-right'} color="grey-500" />
       </Box>
     )}
     {children}
     {hasCaret === 'right' && (
       <Box margin="0 0 0 auto">
-        <Icon
-          name={isDetailsOpen ? 'caret-sm-up' : 'caret-sm-down'}
-          color="grey-500"
-        />
+        <Icon name={isDetailsOpen ? 'caret-sm-up' : 'caret-sm-down'} color="grey-500" />
       </Box>
     )}
   </DetailsSummary>

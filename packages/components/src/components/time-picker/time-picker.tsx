@@ -11,7 +11,7 @@ export type TimePickerProps = Omit<SelectInputProps, 'options'> & {
   /**
    * End hour and minute
    */
-  endTime?: { hour: number; minute: number; };
+  endTime?: { hour: number; minute: number };
   /**
    * Interval of displayed times (in seconds). Defaults to 900 seconds (15 minutes).
    */
@@ -25,8 +25,8 @@ export type TimePickerProps = Omit<SelectInputProps, 'options'> & {
   /**
    * Start hour and minute
    */
-  startTime?: { hour: number; minute: number; };
-}
+  startTime?: { hour: number; minute: number };
+};
 
 export const TimePicker: FC<TimePickerProps> = ({
   id,

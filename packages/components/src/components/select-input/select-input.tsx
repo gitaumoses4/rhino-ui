@@ -150,11 +150,11 @@ export const SelectInput: FC<SelectInputProps> = ({
     onChange(simulatedEventPayloadType);
   };
 
-  const handleFocus: FocusEventHandler = e => {
+  const handleFocus: FocusEventHandler = (e) => {
     if (onFocus) onFocus(e);
   };
 
-  const handleBlur: FocusEventHandler = e => {
+  const handleBlur: FocusEventHandler = (e) => {
     if (onBlur) onBlur(e);
   };
 
@@ -164,7 +164,7 @@ export const SelectInput: FC<SelectInputProps> = ({
     'rhinolabs-components__variables__form-control',
     'select-input-wrapper',
     className,
-    ...responsiveClasses.map(c => (styles[c])),
+    ...responsiveClasses.map((c) => styles[c]),
     {
       [styles.disabled]: isDisabled,
     },
@@ -209,12 +209,10 @@ export const SelectInput: FC<SelectInputProps> = ({
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        styles={{ menuPortal: base => ({ ...base, zIndex: Number(Z_INDEX_VALUES.popover) }) }}
+        styles={{ menuPortal: (base) => ({ ...base, zIndex: Number(Z_INDEX_VALUES.popover) }) }}
         value={value}
       />
-      {error && typeof error !== 'boolean' && (
-        <InputValidationMessage>{error}</InputValidationMessage>
-      )}
+      {error && typeof error !== 'boolean' && <InputValidationMessage>{error}</InputValidationMessage>}
     </Box>
   );
 };

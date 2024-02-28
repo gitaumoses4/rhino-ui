@@ -41,10 +41,7 @@ const meta: Meta<typeof Tabs> = {
         disable: true,
       },
     },
-    ...boxPropsKeys.reduce(
-      (acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }),
-      {}
-    ),
+    ...boxPropsKeys.reduce((acc, curr) => ({ ...acc, [curr]: { table: { disable: true } } }), {}),
   },
 };
 
@@ -53,7 +50,7 @@ export default meta;
 type Story = StoryObj<TabsProps>;
 
 export const Playground: Story = {
-  render: ({value, size, disabledTabs, ...args}) => (
+  render: ({ value, size, disabledTabs, ...args }) => (
     <Box gap="md">
       <Tabs {...args} value={value} size={size}>
         <Tabs.Item isDisabled={disabledTabs.includes(0)}>Tab 0</Tabs.Item>

@@ -1,6 +1,4 @@
-import React, {
-  FC, ChangeEvent, FocusEvent, ReactNode,
-} from 'react';
+import React, { FC, ChangeEvent, FocusEvent, ReactNode } from 'react';
 import classNames from 'classnames';
 import { ResponsiveProp } from '../../types';
 import { generateResponsiveClasses } from '../../lib/generate-responsive-classes';
@@ -102,14 +100,14 @@ export const Toggle: FC<ToggleProps> = ({
   const wrapperClasses = classNames('rhinolabs-components__variables__form-control', { [styles.disabled]: isDisabled });
   const trackClasses = classNames(
     styles['toggle-track'],
-    ...generateResponsiveClasses('track-size', size).map(c => (styles[c])),
+    ...generateResponsiveClasses('track-size', size).map((c) => styles[c]),
     {
       [styles.error]: error,
     },
   );
   const thumbClasses = classNames(
     styles['toggle-thumb'],
-    ...generateResponsiveClasses('thumb-size', size).map(c => (styles[c])),
+    ...generateResponsiveClasses('thumb-size', size).map((c) => styles[c]),
   );
 
   const inputProps = {
@@ -134,7 +132,7 @@ export const Toggle: FC<ToggleProps> = ({
     display: 'flex' as BoxProps['display'],
     direction: 'row' as BoxProps['direction'],
     childGap: 'xs' as BoxProps['childGap'],
-    alignItems: helpText ? 'flex-start' : 'center' as BoxProps['alignItems'],
+    alignItems: helpText ? 'flex-start' : ('center' as BoxProps['alignItems']),
     isFieldRequired: isRequired,
     requiredIndicator,
   };
@@ -148,10 +146,7 @@ export const Toggle: FC<ToggleProps> = ({
             <span className={thumbClasses} data-testid="toggleThumb" />
           </span>
           {!hideLabel && (
-            <Box
-              gap="2xs"
-              className={helpText && (size === 'md' || size === 'lg') ? 'm-top-2xs' : ''}
-            >
+            <Box gap="2xs" className={helpText && (size === 'md' || size === 'lg') ? 'm-top-2xs' : ''}>
               {label && <div>{label}</div>}
               {helpText && (
                 <Box as="p" display="block" fontSize="sm" fontWeight="regular" color="grey">

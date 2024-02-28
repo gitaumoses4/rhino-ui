@@ -22,16 +22,10 @@ type Story = StoryObj<typeof Popover>;
 
 export const Demo: Story = {
   render: (_args) => {
-    const { isOpen: isPopoverOpen, handleToggle: togglePopover } = useOpenClose(
-      {
-        defaultIsOpen: true,
-      }
-    );
-    const NavItem: FC<{ className?: string; iconName?: IconProps['name'] }> = ({
-      children,
-      className,
-      iconName,
-    }) => (
+    const { isOpen: isPopoverOpen, handleToggle: togglePopover } = useOpenClose({
+      defaultIsOpen: true,
+    });
+    const NavItem: FC<{ className?: string; iconName?: IconProps['name'] }> = ({ children, className, iconName }) => (
       <Box
         as="li"
         color="grey-500"
@@ -71,13 +65,7 @@ export const Demo: Story = {
         >
           <Box as="ul" gap="xs" padding="md md sm md">
             <Box direction="row" gap="sm" alignItems="center">
-              <Box
-                fontSize="xs"
-                color="white"
-                radius="sm"
-                background="primary-light"
-                padding="2xs"
-              >
+              <Box fontSize="xs" color="white" radius="sm" background="primary-light" padding="2xs">
                 JC
               </Box>
               <Box display="block" className="truncate">
@@ -155,11 +143,9 @@ export const Demo: Story = {
 
 export const Default: Story = {
   render: (_args) => {
-    const { isOpen: isPopoverOpen, handleToggle: togglePopover } = useOpenClose(
-      {
-        defaultIsOpen: true,
-      }
-    );
+    const { isOpen: isPopoverOpen, handleToggle: togglePopover } = useOpenClose({
+      defaultIsOpen: true,
+    });
     const popoverContent = <>Hello!</>;
     return (
       <div>
@@ -222,13 +208,7 @@ export const Placement: Story = {
     return (
       <Box direction="row" gap="xs" width="100" wrap>
         {positions.map((position) => (
-          <Box
-            height="100px"
-            width="300px"
-            alignItems="center"
-            justifyContent="center"
-            key={position}
-          >
+          <Box height="100px" width="300px" alignItems="center" justifyContent="center" key={position}>
             <Popover
               content={<>{position}</>}
               isOpen={isPopoverOpen[position]}
@@ -239,10 +219,7 @@ export const Placement: Story = {
                 color: 'white',
               }}
             >
-              <Button
-                onClick={() => handleOpenPopover(position)}
-                variant="light"
-              >
+              <Button onClick={() => handleOpenPopover(position)} variant="light">
                 {position}
               </Button>
             </Popover>
@@ -296,11 +273,9 @@ export const HideArrow: Story = {
 
 export const Offset: Story = {
   render: (_args) => {
-    const { isOpen: isPopoverOpen, handleToggle: togglePopover } = useOpenClose(
-      {
-        defaultIsOpen: true,
-      }
-    );
+    const { isOpen: isPopoverOpen, handleToggle: togglePopover } = useOpenClose({
+      defaultIsOpen: true,
+    });
     const popoverContent = (
       <>
         <Box direction="column" gap="sm">

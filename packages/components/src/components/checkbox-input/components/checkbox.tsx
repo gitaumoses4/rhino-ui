@@ -131,28 +131,19 @@ export const Checkbox: React.FC<CheckboxProps> = React.forwardRef(
       required: isRequired,
       type: 'checkbox',
       ref: inputRef,
-      ...value && { value },
+      ...(value && { value }),
     };
 
     const responsiveClasses = generateResponsiveClasses('size', size);
 
-    const containerClasses = classNames(
-      styles.checkbox,
-      className,
-      ...responsiveClasses.map(c => (styles[c])),
-      { [styles.hidden]: isHidden },
-    );
+    const containerClasses = classNames(styles.checkbox, className, ...responsiveClasses.map((c) => styles[c]), {
+      [styles.hidden]: isHidden,
+    });
 
-    const iconClasses = classNames(...responsiveClasses.map(c => (styles[c])));
+    const iconClasses = classNames(...responsiveClasses.map((c) => styles[c]));
 
     return (
-      <Box
-        display={display}
-        ref={ref}
-        style={{ position: 'relative' }}
-        className={containerClasses}
-        {...restProps}
-      >
+      <Box display={display} ref={ref} style={{ position: 'relative' }} className={containerClasses} {...restProps}>
         <input
           {...inputProps}
           style={{

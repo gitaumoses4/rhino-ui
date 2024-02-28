@@ -11,10 +11,7 @@ export interface InputValidationMessageProps {
   size?: 'xs' | 'sm' | 'md';
 }
 
-export const InputValidationMessage: FC<InputValidationMessageProps> = ({
-  children,
-  size = 'sm',
-}) => {
+export const InputValidationMessage: FC<InputValidationMessageProps> = ({ children, size = 'sm' }) => {
   const classes = classNames(
     'rhinolabs-components__variables__form-control',
     styles['input-validation-message'],
@@ -23,9 +20,5 @@ export const InputValidationMessage: FC<InputValidationMessageProps> = ({
     'm-top-xs',
   );
 
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  );
+  return <div className={classes}>{children}</div>;
 };

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "files": ["base.json"],
-  "description": "Typescript configuration for Rhino UI",
+  "description": "Typescript configuration for RhinoUI",
   "scripts": {
     "eslint": "eslint *.json --fix"
   },

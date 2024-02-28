@@ -102,13 +102,10 @@ export const DatePicker: FC<DatePickerProps> = ({
   showFullMonthYearPicker = false,
   showMonthYearPicker = false,
   className = undefined,
-  formatWeekDay = formattedDate => formattedDate[0], // Make days show as 1 character.
+  formatWeekDay = (formattedDate) => formattedDate[0], // Make days show as 1 character.
   ...restProps
 }) => {
-  const datePickerClasses = classNames(
-    styles['react-datepicker'],
-    className,
-  );
+  const datePickerClasses = classNames(styles['react-datepicker'], className);
 
   return (
     <ReactDatePicker

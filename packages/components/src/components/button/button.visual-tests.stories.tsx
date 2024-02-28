@@ -23,12 +23,7 @@ const Default: StoryWithIcon = {
         <Box gap="sm" key={size}>
           <Box gap="sm" direction="row" alignItems="flex-start">
             {BUTTON_VARIANTS.map((variant) => (
-              <Button
-                {...args}
-                size={size}
-                variant={variant}
-                key={`${size}-${variant}`}
-              >
+              <Button {...args} size={size} variant={variant} key={`${size}-${variant}`}>
                 {`${size} ${variant}`}
               </Button>
             ))}
@@ -47,13 +42,7 @@ const Default: StoryWithIcon = {
           </Box>
           <Box gap="sm" direction="row" alignItems="flex-start" key={size}>
             {BUTTON_VARIANTS.map((variant) => (
-              <Button
-                {...args}
-                size={size}
-                variant={variant}
-                isOutlined
-                key={`${size}-${variant}-outline`}
-              >
+              <Button {...args} size={size} variant={variant} isOutlined key={`${size}-${variant}-outline`}>
                 {`${size} ${variant}`}
               </Button>
             ))}

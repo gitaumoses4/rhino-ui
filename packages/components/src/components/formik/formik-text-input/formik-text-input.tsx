@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  FormikTouched,
-  FormikErrors,
-  FieldAttributes,
-  FormikValues,
-  getIn,
-} from 'formik';
+import { FormikTouched, FormikErrors, FieldAttributes, FormikValues, getIn } from 'formik';
 import { TextInput, TextInputProps } from '../../text-input/text-input';
 
 export interface FormikTextInputProps extends Omit<TextInputProps, 'onChange'> {
@@ -17,21 +11,14 @@ export interface FormikTextInputProps extends Omit<TextInputProps, 'onChange'> {
   onChange?: TextInputProps['onChange'];
 }
 
-export const FormikTextInput: React.FC<FormikTextInputProps> = (
-  {
-    field: {
-      name,
-      onBlur,
-      onChange: formikOnChange,
-      value,
-    },
-    form: { touched, errors },
-    onChange,
-    id,
-    label,
-    ...props
-  },
-) => (
+export const FormikTextInput: React.FC<FormikTextInputProps> = ({
+  field: { name, onBlur, onChange: formikOnChange, value },
+  form: { touched, errors },
+  onChange,
+  id,
+  label,
+  ...props
+}) => (
   <TextInput
     {...props}
     id={id}

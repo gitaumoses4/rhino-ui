@@ -59,15 +59,16 @@ export const CardSection: FC<CardSectionProps> = ({
   title = undefined,
   ...restProps
 }) => {
-  const renderTitle = typeof title === 'string' ? (
-    <Box className="m-bottom-md">
-      <Box as="h4" fontWeight="bold" fontSize="sm" color="grey-600">
-        {title}
+  const renderTitle =
+    typeof title === 'string' ? (
+      <Box className="m-bottom-md">
+        <Box as="h4" fontWeight="bold" fontSize="sm" color="grey-600">
+          {title}
+        </Box>
       </Box>
-    </Box>
-  ) : (
-    title
-  );
+    ) : (
+      title
+    );
 
   const sectionClasses = classNames(
     {

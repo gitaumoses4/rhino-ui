@@ -167,7 +167,7 @@ export const TextInput: ForwardRefExoticComponent<TextInputProps> = forwardRef<H
     const inputWrapperClasses = classNames(
       'rhinolabs-components__variables__form-control',
       styles['text-input-wrapper'],
-      ...responsiveClasses.map(c => (styles[c])),
+      ...responsiveClasses.map((c) => styles[c]),
       {
         [styles.error]: error,
         [styles.disabled]: isDisabled,
@@ -215,14 +215,11 @@ export const TextInput: ForwardRefExoticComponent<TextInputProps> = forwardRef<H
       required: isRequired,
       type,
       value,
-      className: classNames(
-        inputProps.className,
-        {
-          'p-left-xs p-left-xs-tablet p-left-xs-desktop p-left-xs-hd': prefix,
-          'p-right-xs p-right-xs-tablet p-right-xs-desktop p-right-xs-hd': suffix,
-          'p-h-0': !suffix && !prefix,
-        },
-      ),
+      className: classNames(inputProps.className, {
+        'p-left-xs p-left-xs-tablet p-left-xs-desktop p-left-xs-hd': prefix,
+        'p-right-xs p-right-xs-tablet p-right-xs-desktop p-right-xs-hd': suffix,
+        'p-h-0': !suffix && !prefix,
+      }),
     };
 
     return (
@@ -238,15 +235,9 @@ export const TextInput: ForwardRefExoticComponent<TextInputProps> = forwardRef<H
         ref={ref}
         {...restProps}
       >
-        <Box
-          direction="row"
-          className={inputWrapperClasses}
-        >
+        <Box direction="row" className={inputWrapperClasses}>
           {prefix && (
-            <Box
-              color="grey-400"
-              className={classNames(styles.prefix, 'ws-nowrap')}
-            >
+            <Box color="grey-400" className={classNames(styles.prefix, 'ws-nowrap')}>
               {prefix}
             </Box>
           )}
@@ -259,10 +250,7 @@ export const TextInput: ForwardRefExoticComponent<TextInputProps> = forwardRef<H
           )}
           {!!onClear && !!value && renderClearIcon()}
           {suffix && (
-            <Box
-              color="grey-400"
-              className={classNames(styles.suffix, 'ws-nowrap')}
-            >
+            <Box color="grey-400" className={classNames(styles.suffix, 'ws-nowrap')}>
               {suffix}
             </Box>
           )}

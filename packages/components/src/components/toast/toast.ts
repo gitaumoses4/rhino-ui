@@ -1,23 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
 import { resolveValue } from '../../lib/resolve-value';
 import { ValueOrFunction } from '../../types';
-import {
-  Toast,
-  ToastOptions,
-  ToastType,
-  ExtendedToastOptions,
-} from './toast.types';
+import { Toast, ToastOptions, ToastType, ExtendedToastOptions } from './toast.types';
 import { ToastStoreActionType, dispatch } from './toast.store';
 
 type Message = ValueOrFunction<React.ReactNode, Toast>;
 
 type ToastHandler = (message: Message, options?: ToastOptions) => string;
 
-const createToast = (
-  message: Message,
-  type: ToastType,
-  opts?: ToastOptions,
-): Toast => ({
+const createToast = (message: Message, type: ToastType, opts?: ToastOptions): Toast => ({
   createdAt: Date.now(),
   visible: true,
   type,
@@ -32,18 +23,17 @@ const createToast = (
   canDismiss: type !== 'loading' && opts?.canDismiss !== false,
 });
 
-const createHandler = (type: ToastType): ToastHandler => (
-  message,
-  options,
-) => {
-  const toast = createToast(message, type, options);
+const createHandler =
+  (type: ToastType): ToastHandler =>
+  (message, options) => {
+    const toast = createToast(message, type, options);
 
-  dispatch({
-    type: ToastStoreActionType.UPSERT_TOAST,
-    payload: { toast },
-  });
-  return toast.id;
-};
+    dispatch({
+      type: ToastStoreActionType.UPSERT_TOAST,
+      payload: { toast },
+    });
+    return toast.id;
+  };
 
 // eslint-disable-next-line
 const toast = (message: Message, opts?: ToastOptions) => createHandler('blank')(message, opts);
@@ -60,13 +50,14 @@ toast.dismiss = (toastId?: string) => {
   });
 };
 
-toast.remove = (toastId?: string) => dispatch({
-  type: ToastStoreActionType.REMOVE_TOAST,
-  payload: { toastId },
-});
+toast.remove = (toastId?: string) =>
+  dispatch({
+    type: ToastStoreActionType.REMOVE_TOAST,
+    payload: { toastId },
+  });
 
 // eslint-disable-next-line func-names
-toast.async = function<T> (
+toast.async = function <T>(
   promise: Promise<T>,
   messages: {
     loading: React.ReactNode;
@@ -78,7 +69,7 @@ toast.async = function<T> (
   const id = toast.loading(messages.loading, { ...opts, ...opts?.loading });
 
   promise
-    .then(data => {
+    .then((data) => {
       toast.success(resolveValue(messages.success, data), {
         id,
         ...opts,
@@ -86,7 +77,7 @@ toast.async = function<T> (
       });
       return data;
     })
-    .catch(err => {
+    .catch((err) => {
       toast.error(resolveValue(messages.error, err), {
         id,
         ...opts,

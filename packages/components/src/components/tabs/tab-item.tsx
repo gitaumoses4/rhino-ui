@@ -6,14 +6,7 @@ export interface TabItemProps extends BoxProps {
 }
 
 export const TabItem: FC<TabItemProps> = forwardRef(
-  ({
-    children,
-    as = 'button',
-    isDisabled = false,
-    padding = 'md',
-    style = {},
-    ...restProps
-  }, ref) => {
+  ({ children, as = 'button', isDisabled = false, padding = 'md', style = {}, ...restProps }, ref) => {
     const styles = {
       ...style,
       cursor: !isDisabled ? 'pointer' : 'not-allowed',

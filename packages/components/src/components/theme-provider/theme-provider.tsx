@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  useState,
-  useEffect,
-  useRef,
-} from 'react';
+import React, { createContext, useState, useEffect, useRef } from 'react';
 
 export type Theme = 'light' | 'dark';
 
@@ -52,9 +47,5 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children = null })
     return () => currentMediaQuery.removeEventListener('change', handleThemePreferenceChange);
   }, [prefersDark]);
 
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme, systemPreference }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, setTheme, systemPreference }}>{children}</ThemeContext.Provider>;
 };

@@ -11,7 +11,7 @@ export interface SelectInputNativeProps extends BoxProps, FormControlProps {
   /**
    * List of options for the select input.
    */
-  options: { value: string | number; label: string | number; }[];
+  options: { value: string | number; label: string | number }[];
   /**
    * onChange callback from select element.
    */
@@ -61,17 +61,14 @@ export const SelectInputNative: React.FC<SelectInputNativeProps> = ({
   ...restProps
 }) => {
   const placeholderOption = { value: '', label: placeholder };
-  const optionsWithPlaceholder = [
-    { ...placeholderOption },
-    ...options,
-  ];
+  const optionsWithPlaceholder = [{ ...placeholderOption }, ...options];
 
   const responsiveClasses = generateResponsiveClasses('size', size);
 
   const selectWrapperClasses = classNames(
     'rhinolabs-components__variables__form-control',
     styles['select-input-native-wrapper'],
-    ...responsiveClasses.map(className => (styles[className])),
+    ...responsiveClasses.map((className) => styles[className]),
     {
       [styles.disabled]: isDisabled,
       [styles.error]: error,
@@ -90,9 +87,7 @@ export const SelectInputNative: React.FC<SelectInputNativeProps> = ({
       requiredIndicator={requiredIndicator}
       {...restProps}
     >
-      <Box
-        className={selectWrapperClasses}
-      >
+      <Box className={selectWrapperClasses}>
         <Box
           as="select"
           aria-label={label}
@@ -107,7 +102,7 @@ export const SelectInputNative: React.FC<SelectInputNativeProps> = ({
           id={id}
           required={isRequired}
         >
-          {optionsWithPlaceholder.map(option => (
+          {optionsWithPlaceholder.map((option) => (
             <Box
               as="option"
               key={option.value}

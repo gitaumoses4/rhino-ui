@@ -3,7 +3,7 @@
   "author": "@rhinolabs",
   "version": "1.0.0",
   "private": true,
-  "description": "Stylelint configuration for Rhino UI",
+  "description": "Stylelint configuration for RhinoUI",
   "main": "src/index.js",
   "scripts": {
     "eslint": "eslint src --fix"

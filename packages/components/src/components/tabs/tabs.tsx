@@ -74,7 +74,7 @@ const TabsBaseComponent: React.FC<TabsProps> = React.forwardRef(
           'aria-selected': value === index,
           ref: mergeRefs([
             value === index ? activeTabRef : null,
-            (child as ReactNode & { ref: RefObject<HTMLElement>; }).ref,
+            (child as ReactNode & { ref: RefObject<HTMLElement> }).ref,
           ]),
         });
       }
@@ -91,14 +91,7 @@ const TabsBaseComponent: React.FC<TabsProps> = React.forwardRef(
     }, []);
 
     return (
-      <Box
-        as={as}
-        borderWidth={borderWidth}
-        borderColor={borderColor}
-        overflow={overflow}
-        ref={ref}
-        {...restProps}
-      >
+      <Box as={as} borderWidth={borderWidth} borderColor={borderColor} overflow={overflow} ref={ref} {...restProps}>
         <Box
           direction="row"
           role="tablist"

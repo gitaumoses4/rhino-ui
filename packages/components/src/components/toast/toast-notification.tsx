@@ -25,9 +25,7 @@ interface ToastNotificationProps {
   /**
    * Render function to create custom toast notification.
    */
-  children?: (components: {
-    message: React.ReactNode;
-  }) => React.ReactNode;
+  children?: (components: { message: React.ReactNode }) => React.ReactNode;
   /**
    * Handler for when the dismiss button is pressed.
    */
@@ -42,9 +40,9 @@ const getAnimationClass = (position: ToastPosition, visible: boolean): React.CSS
   const [enter, exit] = prefersReducedMotion()
     ? [styles['toast-notification-fade-in'], styles['toast-notification-fade-out']]
     : [
-      styles[`toast-notification-enter-${verticalPosition}`],
-      styles[`toast-notification-exit-${isCentered ? verticalPosition : horizontalPosition}`],
-    ];
+        styles[`toast-notification-enter-${verticalPosition}`],
+        styles[`toast-notification-exit-${isCentered ? verticalPosition : horizontalPosition}`],
+      ];
 
   return visible ? enter : exit;
 };
@@ -103,9 +101,7 @@ const renderDismissIcon = (toast: Toast, onDismiss: ToastNotificationProps['onDi
 
 // eslint-disable-next-line import/prefer-default-export
 export const ToastNotification: React.FC<ToastNotificationProps> = React.memo(
-  ({
-    toast, position = 'top-center', style, children, onDismiss,
-  }) => {
+  ({ toast, position = 'top-center', style, children, onDismiss }) => {
     const message = (
       <Box
         direction="row"
@@ -122,14 +118,9 @@ export const ToastNotification: React.FC<ToastNotificationProps> = React.memo(
 
     const animationClass = toast?.height ? getAnimationClass(toast.position || position, toast.visible) : undefined;
 
-    const classes = classNames(
-      toast.className,
-      styles['toast-notification'],
-      animationClass,
-      {
-        'toast-notification--not-visible': !toast.visible,
-      },
-    );
+    const classes = classNames(toast.className, styles['toast-notification'], animationClass, {
+      'toast-notification--not-visible': !toast.visible,
+    });
 
     return (
       <Box
@@ -141,7 +132,7 @@ export const ToastNotification: React.FC<ToastNotificationProps> = React.memo(
         style={{
           ...style,
           ...toast.style,
-          ...!toast.height && { opacity: 0 },
+          ...(!toast.height && { opacity: 0 }),
         }}
       >
         {typeof children === 'function' ? (

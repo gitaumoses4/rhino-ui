@@ -45,7 +45,7 @@ export interface TableRowProps {
    * Whether the row is inside the table head (thead).
    */
   isTableHead?: boolean;
-   /**
+  /**
    * Callback function to fire on sorting one of the table headers.
    */
   onSort?: (event: EventWithColumnKey) => void;
@@ -87,13 +87,9 @@ export const TableRow: FC<TableRowProps> = ({
   rowIndex = undefined,
   truncateOverflow = false,
 }) => {
-  const tableRowClasses = classNames(
-    styles['table-row'],
-    { [styles.hoverable]: isHoverable },
-    className,
-  );
+  const tableRowClasses = classNames(styles['table-row'], { [styles.hoverable]: isHoverable }, className);
 
-  const renderCellContent = (column: Column):ReactNode => {
+  const renderCellContent = (column: Column): ReactNode => {
     if (column.render) {
       const cellValue = column.dataKey && row ? row[column.dataKey] : undefined;
       return column.render(cellValue, row, rowIndex);
@@ -102,7 +98,7 @@ export const TableRow: FC<TableRowProps> = ({
     return column.dataKey && row ? row[column.dataKey] : null;
   };
 
-  const getCellClassName = (column: Column):string|undefined => {
+  const getCellClassName = (column: Column): string | undefined => {
     if (column.cellClassName) {
       if (typeof column.cellClassName === 'function') {
         return column.cellClassName(column, row, rowIndex);
@@ -114,7 +110,7 @@ export const TableRow: FC<TableRowProps> = ({
 
   return (
     <tr className={tableRowClasses}>
-      {Object.values(columns).map((column, columnIndex) => (
+      {Object.values(columns).map((column, columnIndex) =>
         isTableHead ? (
           <TableHeaderCell
             column={column}
@@ -146,8 +142,8 @@ export const TableRow: FC<TableRowProps> = ({
           >
             {renderCellContent(column)}
           </TableBodyCell>
-        )
-      ))}
+        ),
+      )}
     </tr>
   );
 };

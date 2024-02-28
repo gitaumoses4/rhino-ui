@@ -37,9 +37,7 @@ export const PrefixSuffixSizes: Story = {
             id="prefixSuffix1"
             value={prefixValue}
             label="Prefix"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue(event.target.value)}
             prefix="@"
             size="sm"
           />
@@ -47,9 +45,7 @@ export const PrefixSuffixSizes: Story = {
             id="prefixSuffix2"
             value={prefixValue2}
             label="Prefix and Suffix"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue2(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue2(event.target.value)}
             prefix="$"
             suffix=".99"
             size="sm"
@@ -59,9 +55,7 @@ export const PrefixSuffixSizes: Story = {
             value={prefixValue3}
             label="Suffix"
             placeholder="Contact name"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue3(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue3(event.target.value)}
             suffix={<Icon name="book" />}
             size="sm"
           />
@@ -70,9 +64,7 @@ export const PrefixSuffixSizes: Story = {
             value={prefixValue4}
             label="Suffix with Clear"
             placeholder="Contact name"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue4(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue4(event.target.value)}
             onClear={() => setPrefixValue4('')}
             suffix={<Icon name="search" />}
             size="sm"
@@ -83,18 +75,14 @@ export const PrefixSuffixSizes: Story = {
             id="prefixSuffix5"
             value={prefixValue}
             label="Prefix"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue(event.target.value)}
             prefix="@"
           />
           <TextInput
             id="prefixSuffix6"
             value={prefixValue2}
             label="Prefix and Suffix"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue2(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue2(event.target.value)}
             prefix="$"
             suffix=".99"
           />
@@ -103,9 +91,7 @@ export const PrefixSuffixSizes: Story = {
             value={prefixValue3}
             label="Suffix"
             placeholder="Contact name"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue3(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue3(event.target.value)}
             suffix={<Icon name="book" />}
           />
           <TextInput
@@ -113,9 +99,7 @@ export const PrefixSuffixSizes: Story = {
             value={prefixValue4}
             label="Suffix with Clear"
             placeholder="Contact name"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue4(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue4(event.target.value)}
             onClear={() => setPrefixValue4('')}
             suffix={<Icon name="search" />}
           />
@@ -125,9 +109,7 @@ export const PrefixSuffixSizes: Story = {
             id="prefixSuffix9"
             value={prefixValue}
             label="Prefix"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue(event.target.value)}
             prefix="@"
             size="lg"
           />
@@ -135,9 +117,7 @@ export const PrefixSuffixSizes: Story = {
             id="prefixSuffix10"
             value={prefixValue2}
             label="Prefix and Suffix"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue2(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue2(event.target.value)}
             prefix="$"
             suffix=".99"
             size="lg"
@@ -147,9 +127,7 @@ export const PrefixSuffixSizes: Story = {
             value={prefixValue3}
             label="Suffix"
             placeholder="Contact name"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue3(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue3(event.target.value)}
             suffix={<Icon name="book" />}
             size="lg"
           />
@@ -158,9 +136,7 @@ export const PrefixSuffixSizes: Story = {
             value={prefixValue4}
             label="Suffix with Clear"
             placeholder="Contact name"
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setPrefixValue4(event.target.value)
-            }
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPrefixValue4(event.target.value)}
             onClear={() => setPrefixValue4('')}
             suffix={<Icon name="search" />}
             size="lg"

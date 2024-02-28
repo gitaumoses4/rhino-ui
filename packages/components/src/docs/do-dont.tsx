@@ -12,14 +12,7 @@ export interface DoDontProps {
   dontExample?: ReactNode;
 }
 
-const DoDont: React.FC<DoDontProps> = ({
-  children,
-  className,
-  doTitle,
-  doExample,
-  dontTitle,
-  dontExample,
-}) => (
+const DoDont: React.FC<DoDontProps> = ({ children, className, doTitle, doExample, dontTitle, dontExample }) => (
   <Box
     direction={{ base: 'column', tablet: 'row' }}
     childGap={{ base: 'md', tablet: '2xl' }}

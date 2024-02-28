@@ -1,4 +1,5 @@
-export const prefersReducedMotion = (() => { // eslint-disable-line import/prefer-default-export
+export const prefersReducedMotion = (() => {
+  // eslint-disable-line import/prefer-default-export
   let shouldReduceMotion: boolean | undefined;
 
   return () => {
