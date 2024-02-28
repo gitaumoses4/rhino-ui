@@ -6,9 +6,10 @@
   "files": ["base.json"],
   "description": "Typescript configuration for Rhino UI",
   "scripts": {
-    "eslint": "eslint src --fix",
-    "format": "prettier --write **/src/** --cache "
+    "eslint": "eslint *.json --fix"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@rhino-ui/eslint-config": "workspace:^",
+    "eslint": "^8.57.0"
   }
 }
