@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Source, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import { ToastContainer, toast } from './';
 import { Box } from '../box/box';
 import { Table } from '../table/table';
@@ -91,7 +91,7 @@ Keep the contents of a toast as short as possible by placing only the most impor
 
 ### Example
 
-```jsx
+<Source code={`
 // App.jsx
 import { ToastContainer } from '@rhino-ui/components';
 
@@ -110,7 +110,7 @@ export const SomeAppPage = () => {
     gimme a toast
   </button>
 }
-```
+`}/>
 
 ## Props (for `<ToastContainer />`)
 

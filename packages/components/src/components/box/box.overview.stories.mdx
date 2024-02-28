@@ -1,5 +1,5 @@
 import { Box } from './box';
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, ArgsTable, Source } from '@storybook/addon-docs';
 import { Alert } from '../alert/alert';
 import { RESPONSIVE_STORY } from '../../docs/constants';
 import {
@@ -1821,14 +1821,14 @@ Currently our library supports hover states for:
 
 Any props that accept a `ResponsiveProp` will take an object with the following shape:
 
-```
+<Source code={`
 {
   base?: prop, // breakpoint starting at 0 pixels, not scoped by media query.
   tablet?: prop, // 608px and higher.
   desktop?: prop, // 992px and higher.
   hd?: prop, // 1280px and higher.
 }
-```
+`}/>
 
 These props will create classes that are scoped to the specific breakpoint they are assigned to. Not all breakpoints
 are required in this shape, you can pick and choose which breakpoints require different layout attributes based on a
@@ -1838,7 +1838,7 @@ Props that are responsive-enabled follow a mobile-first approach, which means th
 As the viewport size increases, new styles may be applied (styles are overridden for larger viewports).
 Responsive enabled props take a keyed object that specifies at which [breakpoints](?path=/story/design-tokens-design-tokens--page#breakpoints) to apply certain properties.
 
-```
+<Source code={`
 <Box
   width={{
     base: '100px' // box width is 100px
@@ -1847,7 +1847,7 @@ Responsive enabled props take a keyed object that specifies at which [breakpoint
     hd: '600px' // box width is 600px when viewport width is greater than size-breakpoint-hd
   }}
 >
-```
+`}/>
 
 Try resizing the browser to see the responsive properties in action.
 

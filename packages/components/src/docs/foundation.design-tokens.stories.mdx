@@ -1,4 +1,4 @@
-import { ColorPalette, ColorItem, Meta } from '@storybook/addon-docs';
+import { ColorPalette, ColorItem, Meta, Source } from '@storybook/addon-docs';
 import { color } from '@rhino-ui/design-tokens/build/json/variables-color.json';
 import { size } from '@rhino-ui/design-tokens/build/js/variables-size';
 import { asset } from '@rhino-ui/design-tokens/build/js/variables-asset';
@@ -24,27 +24,27 @@ We use [Style Dictionary](https://amzn.github.io/style-dictionary/) to generate 
 
 Global tokens are the primitive values in our design language, represented by context-agnostic names. Color palette, spacing, typography, and dimension values are all recorded as global tokens. These can be directly used, and are inherited by all other token types.
 
-```css
+<Source language='css' code={`
 --color-brand-grey-500: #2f8459;
-```
+`}/>
 
 ### Alias Tokens or Common Tokens
 
 Alias tokens relate to a specific context or abstraction. Aliases help communicate the intended purpose of a token, and are effective when a value with a single intent will appear in multiple places.
 
-```css
+<Source language='css' code={`
 --color-brand-primary-base: #008433; /* alias */
 --form-control-background-color: --color-brand-white-base; /* common */
-```
+`}/>
 
 ### Component Specific Tokens
 
 Component-specific tokens have the most specific component level context. They often inherit from alias or global tokens, but are named in a way that allows consumers to be as specific as possible in applying tokens in component development.
 
-```css
+<Source language='css' code={`
 --button-background-color: --color-brand-primary-base; /* component */
 --badge-size-xl-font-size: --size-font-md;
-```
+`}/>
 
 ## Border Radius
 

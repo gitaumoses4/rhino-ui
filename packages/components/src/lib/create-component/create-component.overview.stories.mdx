@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, ArgsTable, Source } from '@storybook/addon-docs';
 import { Box } from '../../components/box/box';
 import { createComponent } from './create-component';
 
@@ -85,7 +85,7 @@ This however can lead to markup that can be hard to read in some cases. Consider
 
 The most basic markup for this would look like this:
 
-```jsx
+<Source code={`
 import { Box } from '@rhino-ui/components';
 
 export const App = () => (
@@ -160,12 +160,12 @@ export const App = () => (
     </Box>
   </Box>
 );
-```
+`}/>
 
 ## Improving This Code
 The first step toward improving this code is obviously to try and remove duplicate elements so it's easier to parse. We can accomplish it like this:
 
-```jsx
+<Source code={`
 import { Box } from '@rhino-ui/components';
 
 export const App = () => {
@@ -205,14 +205,14 @@ export const App = () => {
     </Box>
   );
 };
-```
+`}/>
 
 ## Custom Components
 
 The above is much better off the bat but the markup still looks too charged. Here is where custom components come in. We can simplify further by abstracting
 away these containers into their own components.
 
-```jsx
+<Source code={`
 // MainContainer.jsx
 import { Box } from '@rhino-ui/components';
 
@@ -300,7 +300,7 @@ export const App = () => {
     ))}
   </MainContainer>
 }
-```
+`}/>
 
 This is our cleanest example yet, but the process of creating these components is still not ideal as they require re-writing each custom Box and then ensuring
 they always get the exact correct props, as well as ensuring proper spreading of other props.
@@ -310,7 +310,7 @@ they always get the exact correct props, as well as ensuring proper spreading of
 The `createComponent` utility function allows you to create a custom component out of any other component, while ensuring type safety and inference of its props. Using this function
 we could re-write our code like this:
 
-```jsx
+<Source code={`
 import { Box } from '@rhino-ui/components';
 
 const MainContainer = createComponent(Box)({
@@ -350,7 +350,7 @@ export const App = () => {
     ))}
   </MainContainer>
 };
-```
+`}/>
 
 And here we have the same result as the original but with a much lighter markup footprint. The components in this example `MainContainer` and `Column` can also
 take any of the original `Box` props and overwrite its default style. This allows for even more complex customization such as creating custom components from other

@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta, Source } from '@storybook/addon-docs';
 
 <Meta title="About/Get Started" />
 
@@ -6,40 +6,45 @@ import { Meta } from '@storybook/addon-docs';
 
 ### 1. Install
 
-`yarn add @rhino-ui/components`
+<Source language='bash' code={`
+yarn add @rhino-ui/components
+`}/>
 
 or
 
-`npm install @rhino-ui/components`
+<Source language='bash' code={`
+npm install @rhino-ui/components
+`}/>
 
 ### 2. Import Global CSS
 
-```jsx
+<Source code={`
 @import '@rhino-ui/components/dist/css/utilities.css';
 @import '@rhino-ui/components/dist/css/variables.css';
 @import '@rhino-ui/components/dist/css/index.css';
-```
+`}
+/>
 
 ### 3. Import Global CSS Reset (Optional)
 
 We recommend importing our global reset in order to maintain a consistent
 look of all components across applications.
 
-```jsx
+<Source code={`
 @import '@rhino-ui/components/dist/css/reset.css'
-```
+`}/>
 
 ### 4. Import Nexa Font (Optional)
 
 We recommend importing our brand font, Nexa, for styling headings, etc.
 
-```jsx
+<Source code={`
 @import '@rhino-ui/components/dist/css/fonts';
-```
+`} />
 
 ### 5. Basic Usage
 
-```jsx
+<Source code={`
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from '@rhino-ui/components';
@@ -49,5 +54,4 @@ function App() {
 }
 
 ReactDOM.render(<App />, document.querySelector('#app'));
-```
-
+`}/>
