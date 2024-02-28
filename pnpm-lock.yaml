@@ -372,6 +372,9 @@ importers:
       '@rhino-ui/eslint-config':
         specifier: workspace:^
         version: link:../../libs/eslint-config
+      '@rhino-ui/stylelint-config':
+        specifier: workspace:^
+        version: link:../../libs/stylelint-config
       '@semantic-release/commit-analyzer':
         specifier: ^11.1.0
         version: 11.1.0(semantic-release@23.0.2)

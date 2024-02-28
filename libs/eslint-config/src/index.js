@@ -21,7 +21,7 @@ module.exports = {
     "import/prefer-default-export": "off",
     "object-curly-spacing": ["error", "always"],
     "no-prototype-builtins": "off",
-    "import/no-extraneous-dependencies": ["error", {devDependencies: true}],
+    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     "prettier/prettier": [
       "error",
       {

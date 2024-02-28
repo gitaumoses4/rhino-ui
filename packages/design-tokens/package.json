@@ -24,6 +24,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@rhino-ui/eslint-config": "workspace:^",
+    "@rhino-ui/stylelint-config": "workspace:^",
     "eslint": "^8.57.0",
     "stylelint": "^15.11.0",
     "@babel/plugin-transform-modules-commonjs": "^7.12.1",
