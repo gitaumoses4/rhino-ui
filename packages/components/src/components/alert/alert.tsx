@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, MouseEvent, KeyboardEvent } from 'react';
+import React, { FC, KeyboardEvent, MouseEvent, ReactNode } from 'react';
 import classNames from 'classnames';
 import { Heading } from '../heading/heading';
 import { Box } from '../box/box';

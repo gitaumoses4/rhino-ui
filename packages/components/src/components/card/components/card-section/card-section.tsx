@@ -93,5 +93,3 @@ export const CardSection: FC<CardSectionProps> = ({
     </Box>
   );
 };
-
-export default CardSection;
