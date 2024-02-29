@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { ToastContainer, toast } from '.';
+import toast, { ToastContainer } from '.';
 
 const meta: Meta<typeof ToastContainer> = {
   title: 'Components/Toast/Visual Regression Tests',

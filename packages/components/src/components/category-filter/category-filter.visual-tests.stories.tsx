@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Box } from '../box';
+import { Box } from '../box/box';
 import { RESPONSIVE_STORY } from '../../docs/constants';
 import { BaseCategoryFilterSize, CategoryFilter, CategoryFilterProps } from './category-filter';
 import { CATEGORY_FILTER_SIZES } from './category-filter.constants';
