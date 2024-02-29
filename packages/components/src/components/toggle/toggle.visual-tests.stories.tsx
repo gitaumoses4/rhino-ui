@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { RESPONSIVE_STORY } from '../../docs/constants';
 import { Toggle, ToggleProps } from './toggle';
 import { TOGGLE_SIZES } from './toggle.constants';
-import { Box } from '../box';
+import { Box } from '../box/box';
 
 const meta: Meta<typeof Toggle> = {
   title: 'Components/Toggle/Visual Regression Tests',

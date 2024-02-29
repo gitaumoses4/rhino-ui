@@ -222,7 +222,7 @@ export const Popover: FC<PopoverProps> = ({
     // Merge local ref with any ref passed originally to child component.
     // We have to cast with `as` so TS compiler doesn't complain since ReactNode/ReactChild types don't
     // explicitly declare ref as a property in the object.
-    if ((child as ReactNode & { ref: any })?.ref) {
+    if ((child as ReactNode & { ref: never })?.ref) {
       // eslint-disable-line @typescript-eslint/no-explicit-any
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       childProps.ref = mergeRefs([(child as ReactNode & { ref: any })?.ref, childProps.ref]);
