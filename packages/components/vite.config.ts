@@ -5,11 +5,11 @@ import * as path from 'path';
 import { glob } from 'glob';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 
-const COMPONENT_ENTRIES = glob.globSync(path.join('src', 'components', '**', 'index.{ts,tsx}')).reduce((acc, file) => {
-  return {
-    ...acc,
-    [file.replace(/src\/components\/(.*?)\/index\.(ts|tsx)/, '$1')]: path.join(__dirname, file),
-  };
+const COMPONENT_ENTRIES = glob.globSync(path.join('src', 'components', '*', 'index.{ts,tsx}')).reduce((acc, file) => {
+  let outputName = file.replace(/src\/components\/(.*?)\/index\.(ts|tsx)/, '$1');
+  if (file === 'src/components/index.ts') outputName = 'index';
+
+  return { ...acc, [outputName]: path.join(__dirname, file) };
 }, {});
 
 export default defineConfig({
