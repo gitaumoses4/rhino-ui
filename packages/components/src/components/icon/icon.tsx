@@ -1,9 +1,9 @@
 import React, { FC, forwardRef } from 'react';
 import icons from '@rhino-ui/design-tokens/build/icons/react';
 import classNames from 'classnames';
-import { generateResponsiveClasses } from '../../lib/generate-responsive-classes';
+import { generateResponsiveClasses } from '../../lib';
 import { FontColor, FontSize, IconName, ResponsiveProp } from '../../types';
-import { Box } from '../box/box';
+import Box from '../box';
 
 export interface IconProps {
   className?: string;

@@ -2,8 +2,8 @@ import React, { FC, ReactNode } from 'react';
 import classNames from 'classnames';
 import styles from './table-row.module.scss';
 import { Column, EventWithColumnKey, Row } from '../../../../types';
-import { getColumnKeys } from '../../../../lib/get-column-keys';
-import TableBodyCell from '../../table-body/table-body-cell/table-body-cell';
+import { getColumnKeys } from '../../../../lib';
+import { TableBodyCell } from '../../table-body/table-body-cell/table-body-cell';
 import { TableHeaderCell } from '../../table-head/table-header-cell/table-header-cell';
 
 export interface TableRowProps {

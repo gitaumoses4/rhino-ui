@@ -46,7 +46,7 @@ export interface TableBodyCellProps {
   width?: number;
 }
 
-const TableBodyCell: FC<TableBodyCellProps> = ({
+export const TableBodyCell: FC<TableBodyCellProps> = ({
   align = 'left',
   children = null,
   className = '',
@@ -87,5 +87,3 @@ const TableBodyCell: FC<TableBodyCellProps> = ({
     </Box>
   );
 };
-
-export default TableBodyCell;

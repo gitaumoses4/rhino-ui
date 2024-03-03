@@ -1,0 +1,6 @@
+{
+  "extends": ["@rhino-ui/ts-config/base.json"],
+  "include": [
+    "src"
+  ]
+}

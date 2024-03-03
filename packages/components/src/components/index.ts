@@ -48,5 +48,7 @@ export * from './text-link/text-link';
 export * from './theme-provider/theme-provider';
 export * from './time-picker/time-picker';
 export * from './time-picker-native/time-picker-native';
-export * from './toast';
+export * from './toast/toast-container';
+export * from './toast/use-toasts';
+export * from './toast/toast';
 export * from './toggle/toggle';
