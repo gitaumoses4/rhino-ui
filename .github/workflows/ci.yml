@@ -1,0 +1,78 @@
+name: "Continuous Integration"
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - fix/pipelines
+
+jobs:
+  pre-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.OS }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Upload node_modules artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: node_modules
+          path: ./node_modules
+
+  eslint:
+    needs: pre-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download node_modules artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: node_modules
+          path: ./node_modules
+
+      - name: Run ESLint
+        run: pnpm run eslint
+
+  build:
+    needs: pre-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download node_modules artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: node_modules
+          path: ./node_modules
+
+      - name: Build
+        run: pnpm run build
+
+  docs:
+    needs: pre-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download node_modules artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: node_modules
+          path: ./node_modules
+
+      - name: Build docs
+        run: pnpm run build:docs
