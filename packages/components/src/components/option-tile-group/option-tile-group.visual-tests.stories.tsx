@@ -5,6 +5,7 @@ import { OptionTileGroup, OptionTileGroupProps } from './option-tile-group';
 
 const meta: Meta<typeof OptionTileGroup> = {
   title: 'Components/OptionTileGroup/Visual Regression Tests',
+  // @ts-expect-error - Pending Fix
   component: OptionTileGroup,
 };
 
