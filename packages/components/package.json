@@ -130,7 +130,7 @@
     "storybook": "^7.6.17",
     "storybook-addon-mdx-embed": "^1.1.1",
     "style-loader": "^3.3.4",
-    "stylelint": "^15.11.0",
+    "stylelint": "^16.2.1",
     "unist-util-visit": "^5.0.0",
     "url-loader": "^4.1.1",
     "vite": "^5.1.5",
