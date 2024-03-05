@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "build:docs": "turbo build:docs",
     "dev": "turbo dev",
     "eslint": "turbo eslint",
     "stylelint": "turbo stylelint",

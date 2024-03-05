@@ -42,9 +42,8 @@
     "eslint": "eslint src --fix",
     "stylelint": "stylelint '**/*.{css,scss,sass}'",
     "build": "vite build --config vite.config.ts",
-    "test": "dts test --passWithNoTests",
+    "build:docs": "storybook build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "prepublishOnly": "pnpm run build",
     "type-check": "tsc --pretty",
     "type-check:watch": "tsc --watch --pretty"

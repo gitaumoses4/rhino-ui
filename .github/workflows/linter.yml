@@ -1,12 +1,15 @@
-name: "CI - Linter"
+name: "Continuous Integration"
 
 on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - fix/pipelines
 
 jobs:
-  eslint:
+  pre-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,8 +29,23 @@ jobs:
       - name: 🔍 Install dependencies
         run: pnpm install
 
+  eslint:
+    runs-on: ubuntu-latest
+    needs: pre-build
+    steps:
+      - name: 🔎 Run ESLint
+        run: pnpm run eslint
+
+  build:
+    runs-on: ubuntu-latest
+    needs: eslint
+    steps:
       - name: 🛠 Build
         run: pnpm run build
 
-      - name: 🔎 Run ESLint
-        run: pnpm run eslint
+  docs:
+    runs-on: ubuntu-latest
+    needs: eslint
+    steps:
+      - name: 🛠 Build docs
+        run: pnpm run build:docs
