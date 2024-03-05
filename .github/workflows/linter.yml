@@ -31,3 +31,6 @@ jobs:
 
       - name: 🔎 Run ESLint
         run: pnpm run eslint
+
+      - name: 🛠 Build Storybook
+        run: pnpm run build-storybook

@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "build-storybook": "pnpm --filter=@rhino-ui/components build-storybook",
     "dev": "turbo dev",
     "eslint": "turbo eslint",
     "stylelint": "turbo stylelint",
