@@ -1,4 +1,4 @@
-name: "CI - Linter"
+name: "Continuous Integration"
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  eslint:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,5 +32,5 @@ jobs:
       - name: 🔎 Run ESLint
         run: pnpm run eslint
 
-      - name: 🛠 Build Storybook
-        run: pnpm run build-storybook
+      - name: 🛠 Build docs
+        run: pnpm run build:docs
