@@ -36,6 +36,8 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.OS }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
       - uses: pnpm/action-setup@v3
+      - name: 🛠 Build
+        run: pnpm run build
       - name: 🔎 Run ESLint
         run: pnpm run eslint
 
