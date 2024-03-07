@@ -1,81 +1,33 @@
-# Turborepo starter
+# Rhino UI
 
-This is an official starter Turborepo.
+## Table of Contents
+- [What is RhinoUI](#what-is-rhinoui)
+- [Why RhinoUI](#why-rhinoui)
+- [How to Contribute](#how-to-contribute)
+- [How to Raise an Issue](#how-to-raise-an-issue)
+- [License](#license)
 
-## Using this example
+### What is RhinoUI
+[RhinoUI](https://github.com/rhinolabs/rhino-ui) is an open-source set of Frontend libraries designed to simplify the integration of UI components into developers' workflows. This collection includes libraries, components, design tokens, and React hooks, providing a comprehensive toolkit for building modern user interfaces.
 
-Run the following command:
+### Why RhinoUI?
+RhinoUI aims to streamline the integration of UI components, providing a modular, efficient, and developer-friendly solution for frontend projects. With ready-to-use configurations, RhinoUI eliminates repetitive setup tasks and ensures consistency across projects, without sacrificing simplicity.
 
-```sh
-npx create-turbo@latest
-```
+### How to Contribute
+Contributions to RhinoUI are welcome!✅
 
-## What's inside?
+Rhino UI uses pnpm—a performant npm package manager and is integrated into its `pnpm workspace`. This optimizes package installation and dependency management. 
+To install `pnpm`, follow this [guide](https://pnpm.io/installation).
 
-This Turborepo includes the following packages/apps:
+Whether you're fixing a bug, or adding a new feature, please see our [Contributing Guidelines](https://github.com/rhinolabs/rhino-ui/blob/6b5f99bbf4a61c9f1b748722501890a60af1f604/CODE_OF_CONDUCT.md) for details on how to contribute to RhinoUI and participate in our community.
 
-### Apps and Packages
+### How to Raise an Issue
+When raising an issue:
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- Make sure the issue hasn't been raised yet.
+- Tag issue accordingly using your best judgement. Do NOT create new tags. If you feel a new one is needed, raise it in your issue.
+- If your issue is a bug, include screenshots or animated GIFs in your issue whenever needed (if issue is visual in nature).
+- If your issue is a bug, include steps to reproduce, or link to reproducible issue, e.g.: Code Sandbox or similar. Please also provide any additional details including device, OS, browser, browser version etc.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+### License
+Rhino UI is licensed under the [MIT License](https://github.com/rhinolabs/rhino-ui/blob/main/LICENSE)
