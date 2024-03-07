@@ -54,4 +54,5 @@ When raising an issue:
 - If your issue is a bug, include steps to reproduce, or link to reproducible issue, e.g.: Code Sandbox or similar. Please also provide any additional details including device, OS, browser, browser version etc.
 
 ### License
-Rhino UI is licensed under the [MIT License](https://github.com/rhinolabs/rhino-ui/blob/main/LICENSE)
+
+RhinoUI is licensed under the [MIT License](https://github.com/rhinolabs/rhino-ui/blob/main/LICENSE)
